@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery - The Ultimate Solution for 3D Hand Interaction Controllers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .video-container img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .table-container {
+            width: auto;  /* Container width auto-adjusts */
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        table {
+            width: auto; /* Set table width to auto to shrink based on content */
+            border-collapse: collapse;
+            margin: 10px 0;
+            table-layout: auto; /* Allow table to shrink to fit content */
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left; /* Left-align the table content */
+            color: #333; /* Black text */
+        }
+        th {
+            background-color: transparent; /* No background color for the table header */
+            text-align: center; /* Center-align the table headers */
+            color: #333; /* Black text for headers */
+        }
+        tr:nth-child(even) {
+            background-color: #f6f8fa;
+        }
+        tr:nth-child(odd) {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f8ff; /* Light blue hover effect */
+        }
+
+       .right-align-table td:nth-child(2) {
+            text-align: right;
+        }
+
+        .section-title {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .language-buttons button {
+            padding: 8px 16px;
+            font-size: 14px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: transparent;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .language-buttons button:hover {
+            background-color: #f1f1f1;
+            border-color: #999;
+        }
+
+        .language-buttons button:active {
+            background-color: #e1e1e1;
+        }
+
+        .language-buttons button:focus {
+            outline: none;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="language-buttons">
+    <button onclick="switchLanguage('en')">English</button>
+    <button onclick="switchLanguage('zh')">中文</button>
+</div>
+
+<!-- English Content -->
+<div id="content-en" class="hidden">
+    <h1>Mastery—The Ultimate Solution for 3D Hand Interaction Controllers with Low-Cost Glove Design</h1>
+    <h3>Li ZiQi | <a href="mailto:liziqi@matrixrealm.com">liziqi@matrixrealm.com</a></h3>
+
+    <div style="flex-shrink: 0; text-align: center;">
+        <iframe id="video-en" width="340" height="605" 
+            src="https://www.youtube.com/embed/a5aWQXh2FL0?autoplay=1&vq=hd1080" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <!-- Note Section Below Video -->
+        <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
+            <strong>Note:</strong> The display hardware itself is limited to a maximum refresh rate of 60Hz.
+        </p>
+    </div>
+
+    <h2>Overview</h2>
+    <p>Powered by <strong>6-axis IMUs</strong> along with <strong>proprietary hardware and software algorithms</strong>, <strong>Mastery</strong> captures nearly all <strong>detailed movements</strong> of the human hand with <strong>high precision</strong>, all while keeping <strong>manufacturing costs low</strong>. It enables users to interact in VR environments in the most <strong>natural, effortless, and comfortable</strong> way possible, approaching the ideal for VR hand interaction control.</p>
+
+    <p>Unlike traditional controllers that rely on buttons, joysticks, and must be held, <strong>Mastery</strong> unlocks a new era of interaction by fully harnessing the hand’s natural movement. Just as smartphones replaced keypads with multi-touch screens, <strong>Mastery</strong> is revolutionizing VR control, making interactions more <strong>intuitive, precise, and boundlessly versatile</strong>.</p>
+
+    <p>Moreover, the <strong>glove form factor</strong> provides the ideal platform for a <strong>haptic feedback system</strong> (currently featuring vibration motors).</p>
+
+    <h2>Weight</h2>
+    <p>Approximately 100g per glove (excluding battery)</p>
+
+    <h2>Power Consumption</h2>
+    <p>Approximately 83mA @ 5.1V per glove (with significant room for improvement)</p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><a href="#Degrees-of-Freedom">High Degree of Freedom</a></li>
+        <li><a href="#Precision">High Precision</a></li>
+        <li><a href="#Latency">Low Latency</a></li>
+        <li><a href="#Self-Calibration">Self-Calibration</a></li>
+        <li><a href="#Pinch-Detection">Pinch Detection</a></li>
+        <li><a href="#Stability">High Stability</a></li>
+        <li><a href="#Wearability">Easy to Wear</a></li>
+        <li><a href="#Cost">Low Cost</a></li>
+    </ul>
+
+    <h3 id="Degrees-of-Freedom">Degrees of Freedom</h3>
+    <p>Academically, the full range of motion of the hand is generally categorized as having 21 degrees of freedom (excluding the wrist) or 27 degrees of freedom (including the wrist). This solution truly encompasses the complete range of motion of the human hand, including numerous joint degrees of freedom often simplified or ignored in academic studies, resulting in unmatched detail-tracking capabilities.</p>
+
+    <h3 id="Precision">Precision</h3>
+    <p>Hand motion capture is an extremely complex system, and currently, no standard method exists to quantitatively measure error or to compare this solution quantitatively with others. By qualitatively analyzing the rendering results alongside recordings of real movements, it is apparent that this solution achieves a level of precision that far surpasses any known alternatives.</p>
+
+    <h3 id="Latency">Latency</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Computation</td>
+                <td>&lt;1ms</td>
+            </tr>
+            <tr>
+                <td>Wireless (BLE 5.2 protocol)</td>
+                <td>7.5-12.5ms</td>
+            </tr>
+            <tr>
+                <td>Wired (USB 2.0 protocol)</td>
+                <td>&lt;1ms</td>
+            </tr>
+        </table>
+        <p><strong>Note:</strong> Video demonstrations use USB wired transmission, and the display hardware itself is limited to a maximum refresh rate of 60Hz.</p>
+    </div>
+
+
+    <h3 id="Self-Calibration">Self-Calibration</h3>
+    <p>In theory, users do not need to perform any manual calibration after purchase. Mastery can self-calibrate during regular use through adaptive algorithms. This approach differs from most known wearable hand-tracking devices, which require users to perform specific gestures—such as making a fist or spreading fingers—before each use (and sometimes even before every startup).</p>
+
+    <h3 id="Pinch-Detection">Pinch Detection</h3>
+    <p>With the support of dedicated hardware, this technology enables accurate single-hand pinch detection at key points, such as the touch of two fingertips. Based on this, it can achieve millimeter-level precision, allowing accurate triggering of functions like button presses or sliding motions within a movement scale of 1 millimeter.</p>
+
+    <p>Compared to vision-based solutions that require the hand to stay within the camera's field of view and involve relatively larger pinch movements, this solution significantly enhances user experience and reduces user fatigue.</p>
+
+    <h3 id="Stability">Stability</h3>
+    <p>Unlike 9-axis IMU solutions, this solution is not affected by magnetic field-related factors.<p>
+
+    <p>Clearly, it is also immune to issues such as lighting and visual occlusion.</p>
+
+    <h3 id="Wearability">Wearability</h3>
+    <p>Only two steps are needed: put on the glove and secure the Velcro around the wrist.</p>
+
+    <p>To accommodate different hand sizes, several standard elastic glove sizes are available. Finger thickness does not affect the fit; instead, the glove aims to match different finger lengths as closely as possible.</p>
+
+    <h3 id="Cost">Cost</h3>
+
+    <div class="table-container">
+        <p><strong>Based on a single glove</strong></p>
+        <table class="right-align-table">
+            <tr>
+                <th>Categories</th>
+                <th>Price (USD)</th>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td>IMU Chips</td>
+                <td>7.3</td>
+                <td>Based on Taobao retail price</td>
+            </tr>
+            <tr>
+                <td>MCU, BLE Chips</td>
+                <td>2.5</td>
+                <td>Based on Taobao retail price</td>
+            </tr>
+            <tr>
+                <td>Other ICs and Electronic Components</td>
+                <td>4.5</td>
+                <td>Estimated</td>
+            </tr>
+            <tr>
+                <td>PCB, FPC</td>
+                <td>2.0</td>
+                <td>Estimated</td>
+            </tr>
+            <tr>
+                <td>Enclosure and Protective Structure</td>
+                <td>2.8</td>
+                <td>Estimated</td>
+            </tr>
+            <tr>
+                <td>Specialized Fabric Gloves</td>
+                <td>4.2</td>
+                <td>Estimated</td>
+            </tr>
+            <tr>
+                <td>Assembly and Others</td>
+                <td>1.7</td>
+                <td>Estimated</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>25.0</td>
+                <td></td>
+            </tr>
+        </table>
+        <p><strong>Note:</strong> The values are calculated in RMB and then converted into USD based on the information and exchange rate as of February 8, 2025.</p>
+    </div>
+
+    <h2>Timeline</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>2016.05</td>
+                <td>Started <strong>Mastery</strong> project.</td>
+            </tr>
+            <tr>
+                <td>2016.10</td>
+                <td>Developed the initial prototype, integrating industry-standard algorithms with an optimized sensor layout. At this stage, its performance surpassed all known similar solutions worldwide.</td>
+            </tr>
+            <tr>
+                <td>2018.01</td>
+                <td>Completed a major hardware architecture update.</td>
+            </tr>
+            <tr>
+                <td>2019.03</td>
+                <td>Completed major updates to software architecture and algorithms.</td>
+            </tr>
+            <tr>
+                <td>2019.05</td>
+                <td>Completed the <a href="https://youtu.be/w4YGIjqZUME" target="_blank"><strong>2019-milestone prototype</strong></a>, achieving motion capture performance that surpassed all known hand-tracking solutions at the time.</td>
+            </tr>
+            <tr>
+                <td>2019.08</td>
+                <td>Conceived a breakthrough approach to bypass the principle-based solution, significantly reducing material costs.</td>
+            </tr>
+            <tr>
+                <td>2019.11</td>
+                <td>Founded <strong>Matrix Realm Tech (Hangzhou) Ltd</strong> to further develop <strong>Mastery</strong>.</td>
+            </tr>
+            <tr>
+                <td>2020.01-2021.11</td>
+                <td>Refined hardware with enhanced industrial design and completely restructured the software architecture.</td>
+            </tr>
+            <tr>
+                <td>2021.12</td>
+                <td>Gained deeper theoretical insights into algorithms, leading to an initial solution for hand differences among users.</td>
+            </tr>
+            <tr>
+                <td>2022.01-2024.01</td>
+                <td>Worked on resolving production challenges and explored methods to reduce sensor material costs, though initial attempts were unsuccessful.</td>
+            </tr>
+            <tr>
+                <td>2024.05</td>
+                <td>Through extensive research, gained deeper expertise in IMU technology and mathematics, leading to significant improvements in both algorithms and hardware.</td>
+            </tr>
+            <tr>
+                <td>2024.10</td>
+                <td>Completed the <a href="https://youtu.be/a5aWQXh2FL0" target="_blank"><strong>2024-milestone prototype</strong></a>, which perfectly validated the original mathematical theory and algorithm. This breakthrough eliminated the inherent flaws of the original approach while drastically reducing costs.</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Developer</h2>
+    <p><strong>Li ZiQi</strong> – Founder of <strong>Matrix Realm Tech (Hangzhou) Ltd</strong>.</p>
+    <p>Graduated with a bachelor's degree in Measurement and Control Technology and Instruments from Chongqing University (CQU) in 2014, ranked 1st in overall performance.</p>
+    <p>Expert in Human-Computer Interaction (HCI) with a strong foundation in mathematics, physics, and biology as they relate to HCI. Full-stack engineer with deep technical expertise in building and optimizing interactive systems.</p>
+
+    <h2>Company</h2>
+    <p><strong>Matrix Realm Tech (Hangzhou) Ltd.</strong></p>
+    <p><strong>源域科技（杭州）有限公司</strong></p>
+<!-- English Content -->
+</div>
+
+<!-- Chinese Content -->
+<div id="content-zh" class="hidden">
+    <h1>掌控—低成本手套形态的3D手部交互控制器终极解决方案</h1>
+    <h3>李子琪 | <a href="mailto:liziqi@matrixrealm.com">liziqi@matrixrealm.com</a></h3>
+
+    <div style="flex-shrink: 0; text-align: center;">
+        <iframe id="video-zh" width="340" height="605"
+            src="https://player.bilibili.com/player.html?bvid=BV1swSzYUE6Z&autoplay=0" 
+            scrolling="no" 
+            frameborder="0" 
+            allowfullscreen="true" 
+            webkitallowfullscreen="true" 
+            mozallowfullscreen="true" >
+        </iframe>
+        <!-- Note Section Below Video -->
+        <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
+            <strong>注：</strong>显示硬件本身的最大刷新率为 60Hz。
+        </p>
+    </div>
+
+    <h2>概述</h2>
+    <p>由<strong>6轴IMU</strong>与<strong>专有硬件和软件算法</strong>驱动，<strong>掌控</strong>以<strong>高精度</strong>捕捉人类手部的几乎所有<strong>细微动作</strong>，同时保持<strong>低制造成本</strong>。它使用户能够以最<strong>自然、轻松、舒适</strong>的方式在VR环境中进行交互，趋近理想的VR手部交互控制。</p>
+
+    <p>与传统控制器依赖按钮、操纵杆并需要手持不同，<strong>掌控</strong>通过完全利用手部的自然运动，正在开启交互的新纪元。就像智能手机用多点触控屏代替了物理按键，<strong>掌控</strong>使交互变得更加<strong>直观、精确，真正释放了对于交互无限的想象力</strong>。</p>
+
+    <p>同时，<strong>手套形式</strong>为<strong>触觉反馈系统</strong>提供了理想的载体（目前配备振动电机）。</p>
+
+    <h2>重量</h2>
+    <p>每只手套大约 100 克（不包括电池）</p>
+
+    <h2>功耗</h2>
+    <p>每只手套大约 83mA @ 5.1V（还有显著提升空间）</p>
+
+    <h2>特性</h2>
+    <ul>
+        <li><a href="#自由度">高自由度</a></li>
+        <li><a href="#精度">高精度</a></li>
+        <li><a href="#延迟">低延迟</a></li>
+        <li><a href="#自校准">自校准</a></li>
+        <li><a href="#捏合检测">捏合检测</a></li>
+        <li><a href="#稳定性">高稳定性</a></li>
+        <li><a href="#穿戴">易穿戴</a></li>
+        <li><a href="#成本">低成本</a></li>
+    </ul>
+
+    <h3 id="自由度">自由度</h3>
+    <p>从学术角度来看，手部的完整运动范围通常被分为 21 个自由度（不包括手腕）或 27 个自由度（包括手腕）。该解决方案真正涵盖了人类手部的完整运动范围，包括学术研究中常常简化或忽略的多个关节自由度，具有无与伦比的细节追踪能力。</p>
+
+    <h3 id="精度">精度</h3>
+    <p>手部动作捕捉是一个极为复杂的系统，目前没有标准的方法来定量测量误差，也没有现有的标准来与其他解决方案进行定量比较。通过定性分析渲染结果和真实动作的记录，可以明显看出该方案的精度水平远超任何已知的其它方案。</p>
+
+    <h3 id="延迟">延迟</h3>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>过程</th>
+                <th>时间</th>
+            </tr>
+            <tr>
+                <td>计算</td>
+                <td>&lt;1ms</td>
+            </tr>
+            <tr>
+                <td>无线（BLE 5.2 协议）</td>
+                <td>7.5-12.5ms</td>
+            </tr>
+            <tr>
+                <td>有线（USB 2.0 协议）</td>
+                <td>&lt;1ms</td>
+            </tr>
+        </table>
+        <p><strong>注：</strong>视频演示使用 USB 有线传输，显示硬件本身的最大刷新率为 60Hz。</p>
+    </div>
+
+    <h3 id="自校准">自校准</h3>
+    <p>理论上，用户在购买后无需进行任何手动校准。掌控可以通过自适应算法在正常使用过程中进行自校准。该特性不同于大多数已知的穿戴式手部追踪设备，那些设备要求用户在每次使用前进行特定手势（例如握拳或张开手指），有时甚至需要在每次使用前进行。</p>
+
+    <h3 id="捏合检测">捏合检测</h3>
+    <p>基于专有硬件，该项技术能够在关键点（如两个指尖接触时）实现精确的单手捏合检测。基于此，它可以在毫米级精度下实现像按钮按下或滑动等功能的精确触发。</p>
+
+    <p>相比需要手部保持在摄像头视野内并且捏合动作相对较大的基于视觉的解决方案，该解决方案显著提升了用户体验，减少了用户的疲劳感。</p>
+
+    <h3 id="稳定性">稳定性</h3>
+    <p>该方案与常规的 9 轴 IMU 方案不同，不受磁场相关因素的影响。</p>
+
+    <p>同时显然也不会受到光线，视觉遮挡等因素的影响。</p>
+
+    <h3 id="穿戴">穿戴</h3>
+    <p>只需两步：戴上手套并将魔术贴固定在手腕。</p>
+    <p>为适应不同的手部尺寸，提供几种标准的弹性手套尺码。手指的粗细不会影响适配性，手套旨在尽可能匹配不同的手指长度。</p>
+
+    <h3 id="低成本">成本</h3>
+
+    <div class="table-container">
+        <p><strong>基于单只手套</strong></p>
+        <table class="right-align-table">
+            <tr>
+                <th>类别</th>
+                <th>价格 (人民币)</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>IMU 芯片</td>
+                <td>53.5</td>
+                <td>基于淘宝零售价格</td>
+            </tr>
+            <tr>
+                <td>MCU, BLE 芯片</td>
+                <td>18.5</td>
+                <td>基于淘宝零售价格</td>
+            </tr>
+            <tr>
+                <td>其他 IC 和电子元件</td>
+                <td>33.0</td>
+                <td>预估</td>
+            </tr>
+            <tr>
+                <td>PCB, FPC</td>
+                <td>14.5</td>
+                <td>预估</td>
+            </tr>
+            <tr>
+                <td>外壳和保护结构</td>
+                <td>20.0</td>
+                <td>预估</td>
+            </tr>
+            <tr>
+                <td>专用布料手套</td>
+                <td>30.0</td>
+                <td>预估</td>
+            </tr>
+            <tr>
+                <td>组装及其他</td>
+                <td>12.5</td>
+                <td>预估</td>
+            </tr>
+            <tr>
+                <td>总计</td>
+                <td>182.0</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>时间线</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>时间</th>
+                <th>事件</th>
+            </tr>
+            <tr>
+                <td>2016.05</td>
+                <td>启动<strong>掌控</strong>项目。</td>
+            </tr>
+            <tr>
+                <td>2016.10</td>
+                <td>开发了初始原型，使用了行业标准算法并优化了传感器布局，该版本性能超越了当时全球所有已知的IMU手套技术方案。</td>
+            </tr>
+            <tr>
+                <td>2018.01</td>
+                <td>完成了一次的硬件架构更新。</td>
+            </tr>
+            <tr>
+                <td>2019.03</td>
+                <td>完成了软件架构和算法的重要更新。</td>
+            </tr>
+            <tr>
+                <td>2019.05</td>
+                <td>完成了<a href="https://www.bilibili.com/video/BV1q4411g7Yi" target="_blank"><strong>2019-里程碑原型</strong></a>，该版本实现了超越当时全球所有已知手部追踪解决方案的运动捕捉性能。</td>
+            </tr>
+            <tr>
+                <td>2019.08</td>
+                <td>为解决IMU基础原理的局限性提出了突破性的改良方案，同时能够极大降低器件成本。</td>
+            </tr>
+            <tr>
+                <td>2019.11</td>
+                <td>为进一步发展<strong>掌控</strong>，成立了<strong>源域科技（杭州）有限公司</strong>。</td>
+            </tr>
+            <tr>
+                <td>2020.01-2021.11</td>
+                <td>继续完善硬件并进行了工业设计优化，完全重构了软件架构。</td>
+            </tr>
+            <tr>
+                <td>2021.12</td>
+                <td>深入理论算法研究，提出了解决不同人手部差异的初步方案。</td>
+            </tr>
+            <tr>
+                <td>2022.01-2024.01</td>
+                <td>致力于解决生产问题，探索降低传感器材料成本的方法，但初步的多轮尝试均以失败告终。</td>
+            </tr>
+            <tr>
+                <td>2024.05</td>
+                <td>经过之前大量研究，顿悟，更加深刻理解了IMU技术和算法理论，实现了算法和硬件的显著改进。</td>
+            </tr>
+            <tr>
+                <td>2024.10</td>
+                <td>完成了<a href="https://www.bilibili.com/video/BV1swSzYUE6Z" target="_blank"><strong>2024-里程碑原型</strong></a>，完美验证了数学理论和算法，这一突破真正消除了原有IMU方案的固有缺陷，并大幅降低了成本。</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>开发者</h2>
+    <p><strong>李子琪</strong> — <strong>源域科技（杭州）有限公司</strong>创始人。</p>
+    <p>2014年毕业于重庆大学，获得测控技术与仪器专业学士学位，综合成绩排名第一。</p>
+    <p>人机交互（HCI）领域专家，具备数学、物理和生物学的扎实基础，专注于与HCI相关的技术应用。全栈工程师，具备深厚的互动系统开发和优化经验。</p>
+
+    <h2>公司</h2>
+    <p><strong>源域科技（杭州）有限公司</strong></p>
+    <p><strong>Matrix Realm Tech (Hangzhou) Ltd.</strong></p>
+<!-- Chinese Content -->
+</div>
+
+
+<script>
+    function switchLanguage(lang) {
+        const newURL = `${window.location.protocol}//${window.location.host}${window.location.pathname}?lang=${lang}`;
+        history.pushState({ lang: lang }, "", newURL);
+
+
+        if (lang === 'zh') {
+            document.getElementById('content-zh').classList.remove('hidden');
+            document.getElementById('content-en').classList.add('hidden');
+
+        } else {
+            document.getElementById('content-en').classList.remove('hidden');
+            document.getElementById('content-zh').classList.add('hidden');
+        }
+    }
+
+    function switchLanguageFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        switchLanguage(urlParams.get('lang'));
+    }
+
+    switchLanguageFromURL();
+</script>
+
+</body>
+</html>
