@@ -29,9 +29,6 @@ const englishContent = `
 <header>
     <div class="container">
         <h1>Mastery — The Ultimate Solution for 3D Hand Interaction Controllers with Low-Cost Glove Design</h1>
-        <div class="contact-info">
-            <span style="font-weight: bold;">Li ZiQi</span> | <a href="mailto:liziqi@matrixrealm.com" style="color: #ffffff; text-decoration: underline;">liziqi@matrixrealm.com</a>
-        </div>
     </div>
 </header>
 
@@ -59,12 +56,12 @@ const englishContent = `
         <div class="section-title">Market Applications</div>
         <div class="feature-grid">
             <div class="feature-item">
-                <h3>Computer 3D Interaction</h3>
-                <p>Unlike traditional controllers with buttons and joysticks, Mastery leverages natural hand movements, opening a new era of interaction. Just as smartphones replaced physical buttons with touch screens, <strong>Mastery</strong> makes interaction more <span class="highlight">intuitive and precise</span>.</p>
-            </div>
-            <div class="feature-item">
                 <h3>Embodied Intelligence</h3>
                 <p><strong>Mastery</strong> is the perfect device for collecting <span class="highlight">AI data for dexterous hands</span>, capable of generating <span class="highlight">high-quality multi-modal real hand interaction data</span> in bulk.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Computer 3D Interaction</h3>
+                <p>Unlike traditional controllers with buttons and joysticks, Mastery leverages natural hand movements, opening a new era of interaction. Just as smartphones replaced physical buttons with touch screens, <strong>Mastery</strong> makes interaction more <span class="highlight">intuitive and precise</span>.</p>
             </div>
         </div>
     </div>
@@ -272,14 +269,22 @@ const englishContent = `
     <div class="card">
         <h2>About the Developer</h2>
         <div class="developer-profile">
-            <h3>Li ZiQi</h3>
+            <h3>Li ZiQi | <a href="mailto:liziqi@matrixrealm.com">liziqi@matrixrealm.com</a></h3>
             <p>Founder of <strong>Matrix Realm Tech (Hangzhou) Co., Ltd.</strong></p>
-            <ul>
-                <li>Graduated with a bachelor's degree in Measurement and Control Technology and Instruments from Chongqing University (CQU) in 2014</li>
-                <li>Ranked 1st in overall academic performance</li>
-                <li>Expert in Human-Computer Interaction (HCI) with strong foundation in mathematics, physics, and biology</li>
-                <li>Full-stack engineer with deep technical expertise in building and optimizing interactive systems</li>
-            </ul>
+            <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                <div class="qr-item" style="text-align:center; flex:0 0 auto;">
+                    <img src="assets/images/wechat_liziqi_qr.png" alt="WeChat QR Code" class="qr-code" style="width:100px; height:100px;">
+                    <div style="font-size:0.9em; opacity:0.9; margin-top:-2px;">WeChat</div>
+                </div>
+                <div style="flex:1; min-width:260px;">
+                    <ul>
+                        <li>Graduated with a bachelor's degree in Measurement and Control Technology and Instruments from Chongqing University (CQU) in 2014</li>
+                        <li>Ranked 1st in overall academic performance</li>
+                        <li>Expert in Human-Computer Interaction (HCI) with strong foundation in mathematics, physics, and biology</li>
+                        <li>Full-stack engineer with deep technical expertise in building and optimizing interactive systems</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -290,9 +295,6 @@ const chineseContent = `
 <header>
     <div class="container">
         <h1>掌控 — 低成本手套形态的3D手部交互控制器终极解决方案</h1>
-        <div class="contact-info">
-            <span style="font-weight: bold;">李子琪</span> | <a href="mailto:liziqi@matrixrealm.com" style="color: #ffffff; text-decoration: underline;">liziqi@matrixrealm.com</a>
-        </div>
     </div>
 </header>
 
@@ -322,12 +324,12 @@ const chineseContent = `
         <div class="section-title">市场应用</div>
         <div class="feature-grid">
             <div class="feature-item">
-                <h3>计算机3D交互</h3>
-                <p>与传统控制器依赖按钮、操纵杆并需要手持不同，<strong>掌控</strong>通过完全利用手部的自然运动，正在开启交互的新纪元。就像智能手机用多点触控屏代替了物理按键，<strong>掌控</strong>使交互变得更加<span class="highlight">直观、精确</span>。</p>
-            </div>
-            <div class="feature-item">
                 <h3>具身智能</h3>
                 <p><strong>掌控</strong>是<span class="highlight">为灵巧手提供AI数据</span>的完美采集装置，可用于批量生成<span class="highlight">高质量多模态的真实手部交互数据</span>。</p>
+            </div>
+            <div class="feature-item">
+                <h3>计算机3D交互</h3>
+                <p>与传统控制器依赖按钮、操纵杆并需要手持不同，<strong>掌控</strong>通过完全利用手部的自然运动，正在开启交互的新纪元。就像智能手机用多点触控屏代替了物理按键，<strong>掌控</strong>使交互变得更加<span class="highlight">直观、精确</span>。</p>
             </div>
         </div>
     </div>
@@ -534,14 +536,23 @@ const chineseContent = `
     <div class="card">
         <h2>关于开发者</h2>
         <div class="developer-profile">
-            <h3>李子琪</h3>
+            <h3>李子琪 | <a href="mailto:liziqi@matrixrealm.com">liziqi@matrixrealm.com</a></h3>
             <p>源域科技（杭州）有限公司 创始人</p>
-            <ul>
-                <li>2014年毕业于重庆大学（CQU），获测量控制技术与仪器专业学士学位</li>
-                <li>在校期间总成绩排名第一</li>
-                <li>在人机交互（HCI）领域具有扎实的数学、物理和生物学基础</li>
-                <li>全栈工程师，在构建和优化交互系统方面具有深厚的技术专长</li>
-            </ul>
+            <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                <div class="qr-item" style="text-align:center; flex:0 0 auto;">
+                    <img src="assets/images/wechat_liziqi_qr.png" alt="WeChat QR Code" class="qr-code" style="width:100px; height:100px;">
+                    <div style="font-size:0.9em; opacity:0.9; margin-top:-2px;">WeChat</div>
+                </div>
+                <div style="flex:1; min-width:260px;">
+
+                    <ul>
+                        <li>2014年毕业于重庆大学（CQU），获测量控制技术与仪器专业学士学位</li>
+                        <li>在校期间总成绩排名第一</li>
+                        <li>在人机交互（HCI）领域具有扎实的数学、物理和生物学基础</li>
+                        <li>全栈工程师，在构建和优化交互系统方面具有深厚的技术专长</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -568,20 +579,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加共享的Footer
     const footerContent = `
     <footer>
-        <div class="container">
-            <p class="company-name">源域科技（杭州）有限公司</p>
-            <div class="company-logo">
-                <svg xmlns:svg="http://www.w3.org/2000/svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     height="18"
-                     width="210"
-                     version="1.1"
-                     viewBox="0 0 210 18">
-                    <path style="fill:#ffffff;stroke-width:0"
-                          d="M 0,0 V 18 H 3 V 5.4 l 4.5,7.2 h 3.75 L 15.6,5.4 V 18 h 3 V 0 H 14.85 L 9.3,9.6 3.75,0 Z m 28.2,0 -7.35,18 h 9.597657 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 L 30,4.5 35.55,18 H 39.3 L 31.95,0 Z m 9,0 v 3.6 h 7.35 V 18 H 48.3 V 3.6 h 7.35 V 2.85 C 55.65,1.2 54.75,0 53.55,0 Z M 57.9,0 V 3.6 H 70.5 V 7.2 H 57.9 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.2 h 0.14941 c 1.5,0 2.7,-1.5 2.7,-3.3 V 3.6 C 74.25,1.5 73.05,0 71.55,0 Z M 77.25,0 V 18 H 81 V 0 Z m 6.6,0 7.05,9 -7.05,9 h 4.5 l 4.8,-6.15 4.8,6.15 h 4.5 L 95.4,9 102.45,0 h -4.5 L 93.15,6.15 88.35,0 Z m 31.2,0 v 3.45 c 0,0 0,0.1523437 0.1494,0.1523436 h 12.45 V 7.2 H 115.05 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.05 c 0,0 0,-0.15 0.1494,-0.15 h 0.15234 c 1.5,0 2.69824,-1.5 2.69824,-3.3 V 3.6 c -0.14999,-2.1 -1.35,-3.6 -3,-3.6 z m 18.6,0 V 3.6 H 150 V 2.85 C 150,1.2 148.95,0 147.75,0 Z m 25.95,0 -7.35,18 h 9.6 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 l 4.04942,-9.9 5.54883,13.5 h 3.75 L 163.35,0 Z m 13.34766,0 v 18 h 16.35 v -0.9 c 0,-1.35 -1.05,-2.7 -2.25,-2.7 h -10.35 V 0 Z m 18.6,0 v 18 h 3 V 5.4 l 4.35,7.2 h 3.75 l 4.5,-7.2 V 18 H 210 V 0 h -3.6 L 200.85,9.6 195.14942,0 Z M 133.64941,7.2 V 18 H 150 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 H 137.4 V 10.8 H 150 V 9.75 c 0,-1.5 -1.05,-2.5517577 -2.25,-2.5517577 z" />
-                </svg>
+        <div class="footer-content-wrapper">
+            <div class="footer-left">
+                <p class="company-name">源域科技（杭州）有限公司</p>
+                <div class="company-logo">
+                    <svg xmlns:svg="http://www.w3.org/2000/svg"
+                         xmlns="http://www.w3.org/2000/svg"
+                         height="18"
+                         width="210"
+                         version="1.1"
+                         viewBox="0 0 210 18">
+                        <path style="fill:#ffffff;stroke-width:0"
+                              d="M 0,0 V 18 H 3 V 5.4 l 4.5,7.2 h 3.75 L 15.6,5.4 V 18 h 3 V 0 H 14.85 L 9.3,9.6 3.75,0 Z m 28.2,0 -7.35,18 h 9.597657 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 L 30,4.5 35.55,18 H 39.3 L 31.95,0 Z m 9,0 v 3.6 h 7.35 V 18 H 48.3 V 3.6 h 7.35 V 2.85 C 55.65,1.2 54.75,0 53.55,0 Z M 57.9,0 V 3.6 H 70.5 V 7.2 H 57.9 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.2 h 0.14941 c 1.5,0 2.7,-1.5 2.7,-3.3 V 3.6 C 74.25,1.5 73.05,0 71.55,0 Z M 77.25,0 V 18 H 81 V 0 Z m 6.6,0 7.05,9 -7.05,9 h 4.5 l 4.8,-6.15 4.8,6.15 h 4.5 L 95.4,9 102.45,0 h -4.5 L 93.15,6.15 88.35,0 Z m 31.2,0 v 3.45 c 0,0 0,0.1523437 0.1494,0.1523436 h 12.45 V 7.2 H 115.05 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.05 c 0,0 0,-0.15 0.1494,-0.15 h 0.15234 c 1.5,0 2.69824,-1.5 2.69824,-3.3 V 3.6 c -0.14999,-2.1 -1.35,-3.6 -3,-3.6 z m 18.6,0 V 3.6 H 150 V 2.85 C 150,1.2 148.95,0 147.75,0 Z m 25.95,0 -7.35,18 h 9.6 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 l 4.04942,-9.9 5.54883,13.5 h 3.75 L 163.35,0 Z m 13.34766,0 v 18 h 16.35 v -0.9 c 0,-1.35 -1.05,-2.7 -2.25,-2.7 h -10.35 V 0 Z m 18.6,0 v 18 h 3 V 5.4 l 4.35,7.2 h 3.75 l 4.5,-7.2 V 18 H 210 V 0 h -3.6 L 200.85,9.6 195.14942,0 Z M 133.64941,7.2 V 18 H 150 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 H 137.4 V 10.8 H 150 V 9.75 c 0,-1.5 -1.05,-2.5517577 -2.25,-2.5517577 z" />
+                    </svg>
+                </div>
+                <p>© 2019-2025 All Rights Reserved</p>
             </div>
-            <p>© 2019-2025 All Rights Reserved</p>
+            <div class="footer-right">
+                <div class="qr-codes">
+                    <div class="qr-item" style="text-align:center;">
+                        <img src="assets/images/webset_qr.png" alt="Website QR Code" class="qr-code" style="width:100px; height:100px;">
+                        <div style="font-size:0.9em; opacity:0.9; margin-top:-2px;">Website</div>
+                    </div>
+                    <div class="qr-item" style="text-align:center;">
+                        <a href="https://discord.gg/5cHcQ8yhnm" target="_blank">
+                            <img src="assets/images/discord_qr.png" alt="Discord QR Code" class="qr-code" style="width:100px; height:100px;">
+                        </a>
+                        <div style="font-size:0.9em; opacity:0.9; margin-top:-2px;">Discord</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     `;

@@ -313,11 +313,88 @@ footer {
     margin-top: 40px;
 }
 
+.footer-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left {
+    flex: 0 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-right {
+    flex: 0 0 auto;
+}
+
+.qr-codes {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.qr-item {
+    text-align: center;
+}
+
+.qr-code {
+    width: 120px;
+    height: 120px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.qr-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.qr-item a:hover .qr-code {
+    opacity: 0.8;
+}
+
+.footer-right a {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #7DD3D3 !important;
+    text-decoration: underline !important;
+}
+
 footer .company-name {
     font-size: 1.3em;
     letter-spacing: 0.5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: 500;
+}
+
+footer .company-website {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+footer .company-website a {
+    color: #64C8C8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .company-website a:hover {
+    color: #7DD3D3;
+    text-decoration: underline;
 }
 
 .hidden {
@@ -344,6 +421,36 @@ footer .company-name {
 }
 
 @media (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .footer-left {
+        min-width: auto;
+        flex: 0 0 auto;
+    }
+    
+    .footer-right {
+        flex: 0 0 auto;
+    }
+    
+    .qr-codes {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .qr-code {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .qr-codes {
+        margin-top: 0;
+    }
+    
     .container {
         padding: 0 8px;
         width: 98%;
@@ -412,7 +519,7 @@ footer .company-name {
 }
 
 .company-logo {
-    margin: 20px auto;
+    margin: 8px auto;
     text-align: center;
 }
 
@@ -423,8 +530,6 @@ footer .company-name {
     filter: drop-shadow(0 0 5px rgba(100, 200, 200, 0.3));
 }
 
-.company-logo svg:hover {
-}
 
 tr:nth-child(even) {
     background-color: rgba(30, 30, 30, 0.5);
