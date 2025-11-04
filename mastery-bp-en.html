@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=yes">
+    <title>Mastery — The Ultimate Low-Cost Glove-Form 3D Hand Interaction Controller</title>
+    <style>
+:root {
+    --primary-color: #64C8C8;
+    --highlight-color: #64C8C8;
+    --secondary-color: #808080;
+    --accent-color: #64C8C8;
+    --background-color: #121212;
+    --card-bg-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --border-color: #333333;
+    --table-header: #3D7B7B;
+    --table-first-column-width: 90px;
+    --table-content-column-width: 45%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    color: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+header h1 {
+    color: white;
+    border-bottom: none;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(100, 200, 200, 0.3);
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+    opacity: 0.9;
+    position: relative;
+    padding: 5px 0;
+}
+
+.contact-info:before {
+    content: none;
+}
+
+header a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 500;
+}
+
+header a:hover {
+    opacity: 0.85;
+}
+
+h3 {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+a {
+    color: #4A90E2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #5DA3F6;
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(100, 200, 200, 0.2);
+}
+
+.video-container {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.video-wrapper {
+    background-color: #0A0A0A;
+    padding: 8px;
+    border-radius: 0;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+}
+
+.video-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    margin: 12px 0 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: auto;
+    border: none;
+}
+
+.table-container th:last-child,
+.table-container td:last-child {
+    border-right: none;
+}
+
+th, td {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 8px 12px;
+    text-align: left;
+    color: var(--text-color);
+    vertical-align: top;
+}
+
+th {
+    background-color: rgba(30, 30, 30, 0.7);
+    text-align: center;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(100, 200, 200, 0.5);
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+.right-align-table td:nth-child(2) {
+    text-align: right;
+}
+
+.section-title {
+    background-color: rgba(100, 200, 200, 0.08);
+    padding: 10px 14px;
+    margin-top: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.feature-item {
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-shadow: none;
+}
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: transparent;
+    padding: 8px 0;
+    border-bottom: none;
+}
+
+.language-buttons button {
+    padding: 8px 20px;
+    font-size: 14px;
+    margin: 0 8px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(30, 30, 30, 0.7);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-buttons button:hover,
+.language-buttons button.active {
+    background-color: rgba(0, 168, 255, 0.2);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.2);
+}
+
+.language-buttons button:active {
+    transform: scale(0.98);
+}
+
+.language-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 168, 255, 0.3);
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-shadow: none;
+}
+
+.tech-spec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.tech-spec-label {
+    min-width: 180px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.tech-spec-value {
+    flex: 1;
+}
+
+.developer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.developer-card h3 {
+    margin: 0 0 8px 0;
+}
+
+.developer-card p {
+    margin: 0;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+footer .company-name {
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 85%;
+        max-width: 1000px;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .tech-spec-label {
+        min-width: 160px;
+    }
+    
+    .compared-tech {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 8px;
+        width: 98%;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .feature-item {
+        padding: 12px;
+        margin-bottom: 5px;
+    }
+    
+    .feature-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        padding: 8px 12px;
+        margin-top: 20px;
+    }
+    
+    .stability-comparison li {
+        margin-bottom: 8px;
+    }
+    
+    .compared-tech {
+        min-width: 160px;
+    }
+    
+    .tech-spec {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tech-spec-label {
+        margin-bottom: 4px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .table-container {
+        padding: 10px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+.company-logo {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.company-logo svg {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(100, 200, 200, 0.3));
+}
+
+
+tr:nth-child(even) {
+    background-color: rgba(30, 30, 30, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(100, 200, 200, 0.08);
+}
+
+.table-container > p:first-of-type {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.table-container > p:last-of-type {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+    text-align: right;
+}
+
+.table-container p strong {
+    color: var(--secondary-color);
+}
+
+tr.total-row td {
+    border-top: 1px solid rgba(100, 200, 200, 0.3);
+    background-color: rgba(30, 30, 30, 0.7);
+}
+
+.stability-comparison {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.stability-comparison li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.top-bar {
+    background-color: transparent;
+    border-bottom: none;
+    width: 100%;
+    z-index: 100;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .video-wrapper {
+        max-width: 320px;
+    }
+    
+    .video-wrapper iframe {
+        width: 320px;
+        height: 570px;
+    }
+}
+
+.price-spotlight {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #FFDD33;
+    background-color: transparent;
+    padding: 0 2px;
+    border-radius: 0;
+    margin: 0 2px;
+    display: inline;
+    letter-spacing: 0.3px;
+    border-left: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Collapsible card styles */
+.collapsible-card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible-card h2 {
+    position: relative;
+    padding-right: 30px;
+}
+
+.collapsible-card h2::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+/* Collapse hint for cards */
+.collapsible-card h2::before {
+    content: '';
+    position: absolute;
+    right: 26px; /* place before arrow */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    opacity: 0.85;
+}
+
+.collapsible-card.collapsed h2::before {
+    content: 'Click to expand';
+}
+
+.collapsible-card.collapsed h2::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.collapsible-card.collapsed .collapsible-content {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Feature item collapsible styles */
+.feature-item .feature-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.feature-item.collapsed .feature-content {
+    max-height: 0;
+    opacity: 0;
+}
+
+.feature-item.collapsed {
+    padding: 8px 15px;
+}
+
+/* Section toggle styles */
+.section-toggle {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+.section-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+.section-toggle.collapsed::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Collapse hint for section toggles */
+.section-toggle::before {
+    content: '';
+    position: absolute;
+    right: 26px; /* place before arrow */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    opacity: 0.85;
+}
+
+.section-toggle.collapsed::before {
+    content: 'Click to expand';
+}
+
+/* Page watermark */
+.page-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    z-index: 999;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.06);
+    font-weight: 700;
+    font-size: clamp(56px, 16vw, 220px);
+    white-space: nowrap;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+}
+    </style>
+</head>
+<body>
+
+<div class="page-watermark">UNFINISHED</div>
+
+<header>
+    <div class="container">
+        <h1>Mastery — The Ultimate Low-Cost Glove-Form 3D Hand Interaction Controller</h1>
+        <div class="contact-info">
+            <span style="font-weight: bold;">Li ZiQi</span> | <a href="mailto:liziqi@matrixrealm.com" style="color: #ffffff; text-decoration: underline;">liziqi@matrixrealm.com</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe id="video-en" width="340" height="605"
+                src="https://www.youtube.com/embed/a5aWQXh2FL0?autoplay=0&vq=hd1080" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+            <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
+                <strong>Note:</strong> Display hardware limited to 60Hz refresh rate | <a href="https://youtu.be/a5aWQXh2FL0" target="_blank">Watch full video</a>
+            </p>
+        </div>
+    </div>
+
+    
+
+    <div class="card">
+        <h2>Overview</h2>
+        <p><strong>Mastery</strong> is a <span class="highlight">low-cost glove-form 3D hand interaction controller</span> powered by <span class="highlight">6-axis IMUs</span> and <span class="highlight">proprietary hardware and algorithmic optimizations</span>, enabling <span class="highlight">high-precision, low-latency</span> hand motion capture.</p>
+
+        <p>The <span class="highlight">glove form</span> is an ideal platform for both <span class="highlight">haptic feedback</span> and <span class="highlight">haptic sensing</span>, featuring <span class="highlight">self-calibration, pinch detection, and high stability</span> to deliver natural and intuitive interaction.</p>
+
+        <p>Applications include <span class="highlight">Embodied Intelligence, Teleoperation, XR/VR, Industrial Training, Animation Production, Medical Rehabilitation, and Education/Research</span>.</p>
+
+        <p>With strong performance and cost advantages, <strong>Mastery</strong> has the potential to become the future <span class="highlight">consumer-standard 3D hand controller</span>. At <span class="highlight">mass-production scale</span>, estimated manufacturing cost per pair is about <span class="price-spotlight">$50</span>.</p>
+
+        <p>
+            For reference, leading enterprise mocap glove vendor <span class="highlight">Manus Meta</span> reports <span class="price-spotlight">~$10M annual revenue</span>.<br>
+            Considering the current <span class="highlight">Meta Quest</span> ecosystem scale, annual controller hardware TAM is <span class="price-spotlight">estimated > ~$140M</span>.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <h2>Competitive Advantages</h2>
+        <p><strong>Manus Meta (Netherlands)</strong> is a global leader in mocap gloves, serving clients such as <strong>Tesla Optimus</strong>, with ~<strong>$10M annual revenue</strong>.
+        Product lines include <em>Manus Prime</em> (finger tracking), <em>Prime 3 Haptic XR</em> (haptics), <em>Quantum Metagloves</em> (sub-mm precision), and <em>Xsens Metagloves</em> (full-body mocap integration). Focused on the professional high-end market.</p>
+
+        <div class="table-container">
+            <table border="1" cellspacing="0" cellpadding="6">
+                <tr>
+                    <th style="width: var(--table-first-column-width);">Company</th>
+                    <th style="width: var(--table-content-column-width);"><a href="https://www.manus-meta.com/" target="_blank">Manus Meta</a></th>
+                    <th style="width: var(--table-content-column-width);"><a href="https://www.matrixrealm.com/" target="_blank">Matrix Realm Tech</a></th>
+                </tr>
+                <tr>
+                    <td>HQ / Region</td>
+                    <td>Netherlands</td>
+                    <td>China</td>
+                </tr>
+                <tr>
+                    <td>Product Lines</td>
+                    <td>Manus Prime, Prime 3 Haptic XR, Quantum Metagloves, Xsens Metagloves</td>
+                    <td>Mastery series; customizable integration with haptic sensing systems</td>
+                </tr>
+                <tr>
+                    <td>Technical Differences</td>
+                    <td>Active EM solutions can be affected by metal objects; fine details may be incomplete</td>
+                    <td>6-axis IMU with self-calibration and pinch detection; stable and more detailed data</td>
+                </tr>
+                <tr>
+                    <td>Manufacturing Advantage</td>
+                    <td>EU-based; relatively fragmented supply chain; limited mass-production capacity</td>
+                    <td>Leverages China’s complete electronics supply chain for rapid scaling</td>
+                </tr>
+                <tr>
+                    <td>Industry Ecosystem</td>
+                    <td>Primarily EU/US markets; higher friction and service cost for China partnerships</td>
+                    <td>Deep integration with China’s dexterous-hand ecosystem; data collection, validation, and iteration loop</td>
+                </tr>
+                <tr>
+                    <td>Business Potential</td>
+                    <td>High-end professional market; high pricing (€5,000/pair)</td>
+                    <td>Low-cost mass-production path with stronger capabilities; significantly higher potential value</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h2 class="section-toggle collapsed">Core Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item collapsed">
+                <h3>High Degree of Freedom</h3>
+                <div class="feature-content">
+                    <p>Academically, the hand is often modeled with 21 DoF (excluding wrist) or 27 DoF (including wrist). This solution truly covers the full range, including many joints often simplified or ignored, achieving unmatched detail tracking.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>High Precision</h3>
+                <div class="feature-content">
+                    <p>Hand motion capture is highly complex with no universal error metric. Qualitative comparisons between renderings and real motion show precision that surpasses any known alternatives.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>Low Latency</h3>
+                <div class="feature-content">
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Process</th>
+                                <th>Time</th>
+                            </tr>
+                            <tr>
+                                <td>Computation</td>
+                                <td>&lt;1ms</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless (BLE 5.2)</td>
+                                <td>7.5-12.5ms</td>
+                            </tr>
+                            <tr>
+                                <td>Wired (USB 2.0)</td>
+                                <td>&lt;1ms</td>
+                            </tr>
+                        </table>
+                        <p><strong>Note:</strong> Video demos use USB wired transmission; the display hardware max refresh is 60Hz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>Self-Calibration</h3>
+                <div class="feature-content">
+                    <p>In theory, users do not need any manual calibration. Mastery self-calibrates during normal use via adaptive algorithms.</p>
+                    <p>This differs from most wearable hand-tracking devices that require preset gestures (e.g., fist or spread) before each use.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>Pinch Detection</h3>
+                <div class="feature-content">
+                    <p>With dedicated hardware, accurate single-hand pinch detection is enabled at key points (e.g., fingertip contact), allowing millimeter-level precision for button presses or sliding motions.</p>
+                    <p>Compared to vision-based solutions requiring constant in-view hands and larger pinches, this approach improves UX and reduces fatigue.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>High Stability</h3>
+                <div class="feature-content">
+                    <ul class="stability-comparison">
+                        <li><strong>Vs 9-axis IMU</strong> — unaffected by magnetic fields or ferromagnetic materials.</li>
+                        <li><strong>Vs EM systems</strong> — not influenced by metallic objects nearby.</li>
+                        <li><strong>Vs strain/bend sensors</strong> — minimizes aging-induced parameter drift.</li>
+                        <li><strong>Vs computer vision</strong> — immune to lighting and occlusion.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>Easy to Wear</h3>
+                <div class="feature-content">
+                    <p>Two steps: put on the glove and fasten the wrist Velcro.</p>
+                    <p>Multiple elastic sizes accommodate hand size variations; fit targets finger length more than thickness.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>Low Cost</h3>
+                <div class="feature-content">
+                    <p>Manufacturing cost per pair ~<span class="price-spotlight">RMB 360</span> at scale, significantly lower than alternatives.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Technical Specifications</h2>
+        <div class="tech-spec">
+            <div class="tech-spec-label">Weight</div>
+            <div class="tech-spec-value">Approximately 100g per glove (excluding battery)</div>
+        </div>
+        <div class="tech-spec">
+            <div class="tech-spec-label">Power Consumption</div>
+            <div class="tech-spec-value">Approximately 83mA @ 5.1V per glove (room for optimization)</div>
+        </div>
+    </div>
+
+    <div class="card collapsible-card collapsed">
+        <h2>Manufacturing Cost Estimate</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <p style="text-align: left;"><strong>Based on a single glove</strong></p>
+            <table>
+                <tr>
+                    <th><strong>Category</strong></th>
+                    <th><strong>Price (USD)</strong></th>
+                    <th><strong>Note</strong></th>
+                </tr>
+                <tr>
+                    <td>IMU Chips</td>
+                    <td style="text-align: right;">7.3</td>
+                    <td>Based on Taobao retail</td>
+                </tr>
+                <tr>
+                    <td>MCU, BLE Chips</td>
+                    <td style="text-align: right;">2.5</td>
+                    <td>Based on Taobao retail</td>
+                </tr>
+                <tr>
+                    <td>Other ICs & Components</td>
+                    <td style="text-align: right;">4.5</td>
+                    <td>Estimated</td>
+                </tr>
+                <tr>
+                    <td>PCB, FPC</td>
+                    <td style="text-align: right;">2.0</td>
+                    <td>Estimated</td>
+                </tr>
+                <tr>
+                    <td>Enclosure & Protection</td>
+                    <td style="text-align: right;">2.8</td>
+                    <td>Estimated</td>
+                </tr>
+                <tr>
+                    <td>Specialized Fabric Gloves</td>
+                    <td style="text-align: right;">4.2</td>
+                    <td>Estimated</td>
+                </tr>
+                <tr>
+                    <td>Assembly & Others</td>
+                    <td style="text-align: right;">1.7</td>
+                    <td>Estimated</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total</strong></td>
+                    <td style="text-align: right;"><strong>25.0</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2>Scale Cost Estimate</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>Production Scale</strong></th>
+                    <th><strong>Unit Cost (USD/pair)</strong></th>
+                </tr>
+                <tr>
+                    <td>≤ 10 pairs</td>
+                    <td style="text-align: right;">700</td>
+                </tr>
+                <tr>
+                    <td>100 pairs</td>
+                    <td style="text-align: right;">485</td>
+                </tr>
+                <tr>
+                    <td>1,000 pairs</td>
+                    <td style="text-align: right;">280</td>
+                </tr>
+                <tr>
+                    <td>10,000 pairs</td>
+                    <td style="text-align: right;">140</td>
+                </tr>
+                <tr>
+                    <td>100,000 pairs</td>
+                    <td style="text-align: right;">70</td>
+                </tr>
+                <tr>
+                    <td>1,000,000 pairs</td>
+                    <td style="text-align: right;">50</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="section-toggle collapsed">Market Opportunities</h2>
+        <div class="feature-grid">
+            <div class="feature-item collapsed">
+                <h3>Embodied Intelligence & Robotics</h3>
+                <div class="feature-content">
+                    <p>Needs: scalable real-hand multi-modal data (incl. tactile data homologous to dexterous hands) for high-quality datasets; fine-grained joint tracking with reliable labels.</p>
+                    <p>Buyers: enterprise/academic labs; data collection teams.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Teleoperation</h3>
+                <div class="feature-content">
+                    <p>Scenarios: hazardous environments (ICU, power), search and rescue, etc.</p>
+                    <p>Buyers: robotics companies; special-purpose equipment vendors.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>XR/VR Vendors</h3>
+                <div class="feature-content">
+                    <p>Needs: high-precision, low-latency, stable interaction; standardized SDK/hardware interfaces for headset and content ecosystems.</p>
+                    <p>Buyers: headset/controller teams; SIs; platform BD.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Large-space VR</h3>
+                <div class="feature-content">
+                    <p>Needs: reliable hand interaction and pinch recognition; robust deployment and easy maintenance.</p>
+                    <p>Buyers: VR theme parks; immersive venues; offline attractions.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Industrial Training & Simulation</h3>
+                <div class="feature-content">
+                    <p>Needs: natural manipulation and posture reproduction; high reliability and easy maintenance; engine compatibility.</p>
+                    <p>Buyers: simulation vendors; vocational/training institutions.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Animation & VFX</h3>
+                <div class="feature-content">
+                    <p>Needs: detailed finger capture; seamless DCC/real-time engine integration (Unreal/Unity).</p>
+                    <p>Buyers: mocap studios; film/game content companies.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Medical Rehab & Research</h3>
+                <div class="feature-content">
+                    <p>Needs: high-resolution motion data; easy to wear; disinfectable and reusable; research-grade exports.</p>
+                    <p>Buyers: rehab device vendors; hospitals/research institutions.</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>Education & Maker Ecosystem</h3>
+                <div class="feature-content">
+                    <p>Needs: low-cost, programmable, curriculum-ready; with examples and teaching resources.</p>
+                    <p>Buyers: university/secondary labs; maker spaces; study-tour orgs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="card collapsible-card collapsed">
+        <h2>Development Timeline</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>Time</strong></th>
+                    <th><strong>Event</strong></th>
+                </tr>
+                <tr>
+                    <td>2016.05</td>
+                    <td>Started the <strong>Mastery</strong> project.</td>
+                </tr>
+                <tr>
+                    <td>2016.10</td>
+                    <td>Built the initial prototype with industry-standard algorithms and optimized sensor layout, surpassing all known IMU glove solutions at the time.</td>
+                </tr>
+                <tr>
+                    <td>2018.01</td>
+                    <td>Completed a major hardware architecture update.</td>
+                </tr>
+                <tr>
+                    <td>2019.03</td>
+                    <td>Completed major software architecture and algorithm updates.</td>
+                </tr>
+                <tr>
+                    <td>2019.05</td>
+                    <td>Completed the <a href="https://youtu.be/w4YGIjqZUME" target="_blank"><strong>2019 milestone prototype</strong></a>, surpassing all known hand-tracking solutions then.</td>
+                </tr>
+                <tr>
+                    <td>2019.08</td>
+                    <td>Proposed a breakthrough approach to bypass limitations and significantly reduce material costs.</td>
+                </tr>
+                <tr>
+                    <td>2019.11</td>
+                    <td>Founded <strong>Matrix Realm Tech (Hangzhou) Co., Ltd.</strong> to further develop <strong>Mastery</strong>.</td>
+                </tr>
+                <tr>
+                    <td>2020.01-2021.11</td>
+                    <td>Refined hardware with industrial design; completely restructured software architecture.</td>
+                </tr>
+                <tr>
+                    <td>2021.12</td>
+                    <td>Advanced theoretical research; proposed initial solution for user hand differences.</td>
+                </tr>
+                <tr>
+                    <td>2022.01-2024.01</td>
+                    <td>Worked on production issues and material cost reduction; early attempts were unsuccessful.</td>
+                </tr>
+                <tr>
+                    <td>2024.05</td>
+                    <td>Achieved deeper understanding of IMU tech and math; significant algorithm and hardware improvements.</td>
+                </tr>
+                <tr>
+                    <td>2024.10</td>
+                    <td>Completed the <a href="https://youtu.be/a5aWQXh2FL0" target="_blank"><strong>2024 milestone prototype</strong></a>, validating the theory and eliminating prior inherent flaws while cutting costs.</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Early Market Validation</h2>
+        <ul>
+            <li><strong>Potential Customers:</strong> multiple university labs, top domestic dexterous-hand AI companies, mocap companies, research teams, and developers have tested and expressed purchase intent.</li>
+            <li><strong>Why Not Selling Yet:</strong> pending IP protection and security encryption for hardware/software.</li>
+            <li><strong>Next Steps:</strong> complete patents and encryption, validate small-batch production, then launch sales and early B2B deliveries.</li>
+        </ul>
+    </div>
+    
+
+    <div class="card">
+        <h2>Future Roadmap</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>Phase 1: Lab Entry + Phase 2 Preparation</h3>
+                <p><strong>Goal:</strong> establish technical validation and academic influence; prepare for multi-modal data collection.</p>
+                <p><strong>Partners:</strong> dexterous-hand AI companies; university labs (CS, automation, mechanical, biomedical).</p>
+                <p><strong>Strategy:</strong> trials and tech support for courses and projects, accumulating demonstration data; <span class="highlight">engage with dexterous-hand AI companies to design data collection schemes</span>.</p>
+                <p><strong>Business Model:</strong> technical services.</p>
+                <p><strong>Revenue Estimate:</strong> <span class="price-spotlight">$300K – $600K/year</span>.</p>
+                <p><strong>Composition:</strong> PoC (2–3 × 100–150k) + pilots (10–20 pairs × 80–120k) + services (5–8 × 150–250k).</p>
+            </div>
+            <div class="feature-item">
+                <h3>Phase 2: Next-Gen Multi-Modal Device + Hand Data Platform</h3>
+                <p><strong>Goal:</strong> become the standard tactile data service for embodied intelligence and robotics.</p>
+                <p><strong>Core Offering:</strong> <span class="highlight">custom/standard multi-modal data glove</span> + <span class="highlight">hand tactile data platform</span>.</p>
+                <p><strong>Partners:</strong> dexterous-hand vendors; embodied AI companies; special operations robotics.</p>
+                <p><strong>Business Model:</strong> hardware sales + data services + platform subscription + algorithm licensing.</p>
+                <p><strong>Revenue Estimate:</strong> <span class="price-spotlight">$3M – $12M/year</span>.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Phase 3: Consumer VR Controller + Strategic Exit</h3>
+                <p><strong>Goal:</strong> become the standard gesture controller for VR/AR ecosystems; seek strategic acquisition.</p>
+                <p><strong>Product:</strong> lightweight gloves with high-precision gesture tracking and interaction framework.</p>
+                <p><strong>Potential Buyers:</strong> Meta, Apple, Google and other platform leaders.</p>
+                <p><strong>Business Model:</strong> hardware sales + software licensing + platform partnerships + strategic exit.</p>
+                <p><strong>Revenue Estimate:</strong> <span class="price-spotlight">~$140M/year</span>; strategic exit valuation <span class="price-spotlight">$50M – $1B</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Early Stage Plan</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>Phase</strong></th>
+                    <th><strong>Timeline</strong></th>
+                    <th><strong>Key Milestones/Deliverables</strong></th>
+                </tr>
+                <tr>
+                    <td>PoC Validation</td>
+                    <td>Month 0–2</td>
+                    <td>Complete 2–3 PoCs with domestic labs; interface alignment and performance evaluation; no compliance, core capability only</td>
+                </tr>
+                <tr>
+                    <td>Pilot Samples</td>
+                    <td>Month 2–6</td>
+                    <td>Deliver 10–20 pilot pairs; release SDK/examples; finalize SOP and production process; start HW/SW encryption design and testing</td>
+                </tr>
+                <tr>
+                    <td>IP & Security</td>
+                    <td>Month 4–8</td>
+                    <td>File domestic patents and PCT; iterate encryption modules for IP and data protection</td>
+                </tr>
+                <tr>
+                    <td>First Delivery</td>
+                    <td>Month 6–10</td>
+                    <td>Complete first batch production and domestic deliveries; establish after-sales and repurchase mechanisms; preserve traceable data for certifications</td>
+                </tr>
+                <tr>
+                    <td>Compliance & Overseas</td>
+                    <td>Month 10–16</td>
+                    <td>Start and complete 3C/SRRC and CE/FCC/RoHS/REACH/SIG; small-scale pilots in EU/US with localized support</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Team</h2>
+        <div class="developer-profile">
+            <h3>Li ZiQi</h3>
+            <p>Founder, Matrix Realm Tech (Hangzhou) Co., Ltd.</p>
+            <ul>
+                <li>Bachelor in Measurement and Control Technology & Instruments, Chongqing University (CQU), 2014</li>
+                <li>Ranked 1st in overall academic performance</li>
+                <li>Strong foundation in HCI, math, physics, and biology</li>
+                <li>Full-stack engineer with deep expertise in interactive systems</li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+    <div class="card">
+        <h2>Fundraising</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>Item</strong></th>
+                    <th><strong>Details</strong></th>
+                </tr>
+                <tr>
+                    <td>Target Amount</td>
+                    <td>$486k</td>
+                </tr>
+                <tr>
+                    <td>Equity Offered</td>
+                    <td>10%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card collapsible-card collapsed">
+        <h2>Use of Funds (2 Years)</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>Category</strong></th>
+                    <th><strong>Budget (USD)</strong></th>
+                    <th><strong>Note</strong></th>
+                </tr>
+                <tr>
+                    <td>Patents</td>
+                    <td style="text-align: right;">$83,333</td>
+                    <td>PCT × 3 (US, CN, EU, JP)</td>
+                </tr>
+                <tr>
+                    <td>Security/Encryption</td>
+                    <td style="text-align: right;">$20,833</td>
+                    <td>Hardware/firmware/algorithm security</td>
+                </tr>
+                <tr>
+                    <td>Office Space</td>
+                    <td style="text-align: right;">$13,889</td>
+                    <td>4 workstations (incl. 1 large HW station) × 2 years</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+                    <td style="text-align: right;">$13,889</td>
+                    <td>Lab/prototyping/test equipment</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" style="vertical-align: middle;">Personnel</td>
+                    <td style="text-align: right;">$20,833</td>
+                    <td>Marketing/Sales 1 × 1 year</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">$111,111</td>
+                    <td>Senior hardware engineer 1 × 2 years</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">$62,500</td>
+                    <td>Founder 1 × 2 years</td>
+                </tr>
+                <tr>
+                    <td>Travel</td>
+                    <td style="text-align: right;">$6,944</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="vertical-align: middle;">Design Refinement</td>
+                    <td style="text-align: right;">$13,889</td>
+                    <td>Textile substrate validation</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">$13,889</td>
+                    <td>Improve aesthetics and materials</td>
+                </tr>
+                <tr>
+                    <td>Batch Testing</td>
+                    <td style="text-align: right;">$13,889</td>
+                    <td>5 pairs × 2 + 10 pairs × 1</td>
+                </tr>
+                <tr>
+                    <td>Final Production</td>
+                    <td style="text-align: right;">$48,611</td>
+                    <td>100 pairs</td>
+                </tr>
+                <tr>
+                    <td>Compliance & Certification</td>
+                    <td style="text-align: right;">$34,722</td>
+                    <td>3C/SRRC/CE/FCC/RoHS/REACH/SIG budget</td>
+                </tr>
+
+                <tr>
+                    <td>Exhibitions/Conferences</td>
+                    <td style="text-align: right;">$27,778</td>
+                    <td>Domestic & overseas industry events</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td style="text-align: right;">$69,444</td>
+                    <td>Brand and channel campaigns</td>
+                </tr>
+                <tr>
+                    <td>Contingency</td>
+                    <td style="text-align: right;">$13,889</td>
+                    <td></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total</strong></td>
+                    <td style="text-align: right;"><strong>$569,444</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer>
+    <div class="container">
+        <p class="company-name"><a href="https://www.matrixrealm.com" target="_blank" style="color: #ffffff; text-decoration: none;">Matrix Realm Tech (Hangzhou) Co., Ltd.</a></p>
+        <div class="company-logo">
+            <svg xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns="http://www.w3.org/2000/svg"
+                 height="18"
+                 width="210"
+                 version="1.1"
+                 viewBox="0 0 210 18">
+                <path style="fill:#ffffff;stroke-width:0"
+                      d="M 0,0 V 18 H 3 V 5.4 l 4.5,7.2 h 3.75 L 15.6,5.4 V 18 h 3 V 0 H 14.85 L 9.3,9.6 3.75,0 Z m 28.2,0 -7.35,18 h 9.597657 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 L 30,4.5 35.55,18 H 39.3 L 31.95,0 Z m 9,0 v 3.6 h 7.35 V 18 H 48.3 V 3.6 h 7.35 V 2.85 C 55.65,1.2 54.75,0 53.55,0 Z M 57.9,0 V 3.6 H 70.5 V 7.2 H 57.9 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.2 h 0.14941 c 1.5,0 2.7,-1.5 2.7,-3.3 V 3.6 C 74.25,1.5 73.05,0 71.55,0 Z M 77.25,0 V 18 H 81 V 0 Z m 6.6,0 7.05,9 -7.05,9 h 4.5 l 4.8,-6.15 4.8,6.15 h 4.5 L 95.4,9 102.45,0 h -4.5 L 93.15,6.15 88.35,0 Z m 31.2,0 v 3.45 c 0,0 0,0.1523437 0.1494,0.1523436 h 12.45 V 7.2 H 115.05 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.05 c 0,0 0,-0.15 0.1494,-0.15 h 0.15234 c 1.5,0 2.69824,-1.5 2.69824,-3.3 V 3.6 c -0.14999,-2.1 -1.35,-3.6 -3,-3.6 z m 18.6,0 V 3.6 H 150 V 2.85 C 150,1.2 148.95,0 147.75,0 Z m 25.95,0 -7.35,18 h 9.6 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 l 4.04942,-9.9 5.54883,13.5 h 3.75 L 163.35,0 Z m 13.34766,0 v 18 h 16.35 v -0.9 c 0,-1.35 -1.05,-2.7 -2.25,-2.7 h -10.35 V 0 Z m 18.6,0 v 18 h 3 V 5.4 l 4.35,7.2 h 3.75 l 4.5,-7.2 V 18 H 210 V 0 h -3.6 L 200.85,9.6 195.14942,0 Z M 133.64941,7.2 V 18 H 150 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 H 137.4 V 10.8 H 150 V 9.75 c 0,-1.5 -1.05,-2.5517577 -2.25,-2.5517577 z" />
+            </svg>
+        </div>
+        <p>© 2019-2025 All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+// Collapsible functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Card collapsible functionality
+    const collapsibleCards = document.querySelectorAll('.collapsible-card');
+    collapsibleCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+        });
+    });
+    
+    // Feature items are controlled by section toggle only
+    const collapsibleFeatures = document.querySelectorAll('.feature-item');
+    
+    // Section toggle functionality (expand/collapse all features)
+    const sectionToggles = document.querySelectorAll('.section-toggle');
+    sectionToggles.forEach(sectionToggle => {
+        sectionToggle.addEventListener('click', function() {
+            const isCollapsed = this.classList.contains('collapsed');
+            
+            // Find the feature grid within the same card
+            const card = this.closest('.card');
+            const featureItems = card.querySelectorAll('.feature-item');
+            
+            // Toggle all feature items in this section
+            featureItems.forEach(feature => {
+                if (isCollapsed) {
+                    feature.classList.remove('collapsed');
+                } else {
+                    feature.classList.add('collapsed');
+                }
+            });
+            
+            // Toggle section toggle state
+            this.classList.toggle('collapsed');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=yes">
+    <title>掌控 — 低成本手套形态的3D手部交互控制器终极解决方案</title>
+    <style>
+:root {
+    --primary-color: #64C8C8;
+    --highlight-color: #64C8C8;
+    --secondary-color: #808080;
+    --accent-color: #64C8C8;
+    --background-color: #121212;
+    --card-bg-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --border-color: #333333;
+    --table-header: #3D7B7B;
+    --table-first-column-width: 90px;
+    --table-content-column-width: 45%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    color: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+header h1 {
+    color: white;
+    border-bottom: none;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(100, 200, 200, 0.3);
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+    opacity: 0.9;
+    position: relative;
+    padding: 5px 0;
+}
+
+.contact-info:before {
+    content: none;
+}
+
+header a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 500;
+}
+
+header a:hover {
+    opacity: 0.85;
+}
+
+h3 {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+a {
+    color: #4A90E2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #5DA3F6;
+    text-decoration: underline;
+    text-shadow: none;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(100, 200, 200, 0.2);
+}
+
+.video-container {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.video-wrapper {
+    background-color: #0A0A0A;
+    padding: 8px;
+    border-radius: 0;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+}
+
+.video-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    margin: 12px 0 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: auto;
+    border: none;
+}
+
+.table-container th:last-child,
+.table-container td:last-child {
+    border-right: none;
+}
+
+th, td {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 8px 12px;
+    text-align: left;
+    color: var(--text-color);
+    vertical-align: top;
+}
+
+th {
+    background-color: rgba(30, 30, 30, 0.7);
+    text-align: center;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(100, 200, 200, 0.5);
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+
+.right-align-table td:nth-child(2) {
+    text-align: right;
+}
+
+.section-title {
+    background-color: rgba(100, 200, 200, 0.08);
+    padding: 10px 14px;
+    margin-top: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.feature-item {
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 168, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-shadow: none;
+}
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: transparent;
+    padding: 8px 0;
+    border-bottom: none;
+}
+
+.language-buttons button {
+    padding: 8px 20px;
+    font-size: 14px;
+    margin: 0 8px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(30, 30, 30, 0.7);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-buttons button:hover,
+.language-buttons button.active {
+    background-color: rgba(0, 168, 255, 0.2);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.2);
+}
+
+.language-buttons button:active {
+    transform: scale(0.98);
+}
+
+.language-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 168, 255, 0.3);
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-shadow: none;
+}
+
+.tech-spec {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.tech-spec-label {
+    min-width: 180px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.tech-spec-value {
+    flex: 1;
+}
+
+.developer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--card-bg-color);
+    border-radius: 0;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.developer-card h3 {
+    margin: 0 0 8px 0;
+}
+
+.developer-card p {
+    margin: 0;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+footer .company-name {
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 85%;
+        max-width: 1000px;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .tech-spec-label {
+        min-width: 160px;
+    }
+    
+    .compared-tech {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 8px;
+        width: 98%;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .feature-item {
+        padding: 12px;
+        margin-bottom: 5px;
+    }
+    
+    .feature-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        padding: 8px 12px;
+        margin-top: 20px;
+    }
+    
+    .stability-comparison li {
+        margin-bottom: 8px;
+    }
+    
+    .compared-tech {
+        min-width: 160px;
+    }
+    
+    .tech-spec {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tech-spec-label {
+        margin-bottom: 4px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .table-container {
+        padding: 10px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+.company-logo {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.company-logo svg {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(100, 200, 200, 0.3));
+}
+
+
+tr:nth-child(even) {
+    background-color: rgba(30, 30, 30, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(100, 200, 200, 0.08);
+}
+
+.table-container > p:first-of-type {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.table-container > p:last-of-type {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+    text-align: right;
+}
+
+.table-container p strong {
+    color: var(--secondary-color);
+}
+
+tr.total-row td {
+    border-top: 1px solid rgba(100, 200, 200, 0.3);
+    background-color: rgba(30, 30, 30, 0.7);
+}
+
+.stability-comparison {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.stability-comparison li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.top-bar {
+    background-color: transparent;
+    border-bottom: none;
+    width: 100%;
+    z-index: 100;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .video-wrapper {
+        max-width: 320px;
+    }
+    
+    .video-wrapper iframe {
+        width: 320px;
+        height: 570px;
+    }
+}
+
+.price-spotlight {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #FFDD33;
+    background-color: transparent;
+    padding: 0 2px;
+    border-radius: 0;
+    margin: 0 2px;
+    display: inline;
+    letter-spacing: 0.3px;
+    border-left: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Collapsible card styles */
+.collapsible-card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible-card h2 {
+    position: relative;
+    padding-right: 30px;
+}
+
+.collapsible-card h2::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+/* Collapse hint for cards */
+.collapsible-card h2::before {
+    content: '';
+    position: absolute;
+    right: 26px; /* place before arrow */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    opacity: 0.85;
+}
+
+.collapsible-card.collapsed h2::before {
+    content: '点击展开';
+}
+
+.collapsible-card.collapsed h2::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.collapsible-card.collapsed .collapsible-content {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Feature item collapsible styles */
+.feature-item .feature-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.feature-item.collapsed .feature-content {
+    max-height: 0;
+    opacity: 0;
+}
+
+.feature-item.collapsed {
+    padding: 8px 15px;
+}
+
+/* Section toggle styles */
+.section-toggle {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+.section-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+.section-toggle.collapsed::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Collapse hint for section toggles */
+.section-toggle::before {
+    content: '';
+    position: absolute;
+    right: 26px; /* place before arrow */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    opacity: 0.85;
+}
+
+.section-toggle.collapsed::before {
+    content: '点击展开';
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>掌控 — 低成本手套形态的3D手部交互控制器终极解决方案</h1>
+        <div class="contact-info">
+            <span style="font-weight: bold;">李子琪</span> | <a href="mailto:liziqi@matrixrealm.com" style="color: #ffffff; text-decoration: underline;">liziqi@matrixrealm.com</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe id="video-zh" width="340" height="605"
+                src="https://player.bilibili.com/player.html?bvid=BV1swSzYUE6Z&autoplay=0" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                webkitallowfullscreen="true" 
+                mozallowfullscreen="true" >
+            </iframe>
+            <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
+                <strong>注：</strong>视频中显示器最大刷新率为60Hz | <a href="https://www.bilibili.com/video/BV1swSzYUE6Z" target="_blank">点击观看完整视频</a>
+            </p>
+        </div>
+    </div>
+
+    
+
+    <div class="card">
+        <h2>概述</h2>
+        <p><strong>掌控</strong>是基于<span class="highlight">6轴IMU</span>技术的<span class="highlight">低成本手套式3D手部交互控制器</span>，通过<span class="highlight">专有硬件设计与算法优化</span>，实现<span class="highlight">高精度、低延迟</span>的手部动作捕捉体验</p> 
+
+        <p><span class="highlight">手套形态</span>为<span class="highlight">触觉反馈系统</span>与<span class="highlight">触觉采集系统</span>提供了理想载体，具备<span class="highlight">自校准、捏合检测、高稳定性</span>等核心特性，为自然直观的交互体验奠定基础</p>
+
+        <p>产品可广泛应用于<span class="highlight">具身智能、具身降临（遥操作）、XR/VR、工业培训、动画制作、医疗康复、教育科研</span>等多种场景</p>
+
+        <p>凭借出色的性能与成本优势，<strong>掌控</strong>具备未来<span class="highlight">消费级标准3D手部控制器</span>的潜力，在<span class="highlight">规模化量产后</span>，每双手套的制造成本<span class="price-spotlight">约360元人民币</span></p>
+
+        <p>
+            参考业内头部B端动捕手套厂商<span class="highlight">Manus Meta</span>，当前年营收<span class="price-spotlight">近1000万美元</span><br>
+            参考<span class="highlight">Meta Quest</span>头显当前市场规模，交互控制器硬件产品年市场容量<span class="price-spotlight">预计超过10亿元人民币</span>
+        </p>
+    </div>
+
+
+    <div class="card">
+        <h2>竞争优势</h2>
+        <p><strong>Manus Meta（荷兰）</strong> 是全球领先的动作捕捉手套厂商，客户包括 <strong>特斯拉 Optimus</strong>，目前年营收近 1000万美元。  
+        产品线涵盖 <em>Manus Prime</em>（手指追踪）、<em>Prime 3 Haptic XR</em>（触觉反馈）、<em>Quantum Metagloves</em>（亚毫米级精度）、<em>Xsens Metagloves</em>（全身动捕集成）。  
+        定位于专业高端市场。</p>
+
+        <div class="table-container">
+            <table border="1" cellspacing="0" cellpadding="6">
+                <tr>
+                    <th style="width: var(--table-first-column-width);">公司</th>
+                    <th style="width: var(--table-content-column-width);"><strong></strong><a href="https://www.manus-meta.com/" target="_blank">Manus Meta</a></th>
+                    <th style="width: var(--table-content-column-width);"><strong></strong><a href="https://www.matrixrealm.com/" target="_blank">源域科技</a></th>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">总部/区域</td>
+                    <td style="width: var(--table-content-column-width);">荷兰</td>
+                    <td style="width: var(--table-content-column-width);">中国</td>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">产品线</td>
+                    <td style="width: var(--table-content-column-width);">Manus Prime 系列、Manus Prime 3 Haptic XR、Quantum Metagloves、Xsens Metagloves</td>
+                    <td style="width: var(--table-content-column-width);">Mastery 系列， 可定制集成兼容触觉感应系统</td>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">技术差异</td>
+                    <td style="width: var(--table-content-column-width);">主动式电磁感应，会受到环境中的金属物体干扰（致使某些场景会失效），捕捉细节不完整</td>
+                    <td style="width: var(--table-content-column-width);">基于6-axis IMU，支持自校准与捏合检测，稳定性强，数据更加精细精准</td>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">生产制造优势</td>
+                    <td style="width: var(--table-content-column-width);">欧洲企业，供应链相对分散，量产能力有限</td>
+                    <td style="width: var(--table-content-column-width);">依托中国完整的电子制造产业链，具备快速规模化能力</td>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">产业生态优势</td>
+                    <td style="width: var(--table-content-column-width);">主要面向欧美市场，与国内灵巧手厂商合作难度偏高，服务成本更高</td>
+                    <td style="width: var(--table-content-column-width);">可深度融入中国灵巧手产业生态，与国内头部灵巧手厂商、具身智能公司建立紧密合作关系，具备数据采集、技术验证、产品迭代的完整闭环优势</td>
+                </tr>
+                <tr>
+                    <td style="width: var(--table-first-column-width);">商业潜力</td>
+                    <td style="width: var(--table-content-column-width);">专业高端市场，价格高（约5000欧元/套，国内80000元/套），面向影视、科研、工业
+                </td>
+                    <td style="width: var(--table-content-column-width);">低量产成本方案，功能、效果更加强大。潜在商业价值远超现有同类方案
+                </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h2 class="section-toggle collapsed">核心特性</h2>
+        <div class="feature-grid">
+            <div class="feature-item collapsed">
+                <h3>高自由度</h3>
+                <div class="feature-content">
+                    <p>从学术角度来看，手部的完整运动范围通常被分为 21 个自由度（不包括手腕）或 27 个自由度（包括手腕）。该解决方案真正涵盖了人类手部的完整运动范围，包括学术研究中常常简化或忽略的多个关节自由度，具有无与伦比的细节追踪能力。</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>高精度</h3>
+                <div class="feature-content">
+                    <p>手部动作捕捉是一个极为复杂的系统，目前没有标准的方法来定量测量误差，也没有现有的标准来与其他解决方案进行定量比较。通过定性分析渲染结果和真实动作的记录，可以明显看出该方案的精度水平远超任何已知的其它方案。</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>低延迟</h3>
+                <div class="feature-content">
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>过程</th>
+                                <th>时间</th>
+                            </tr>
+                            <tr>
+                                <td>计算</td>
+                                <td>&lt;1ms</td>
+                            </tr>
+                            <tr>
+                                <td>无线（BLE 5.2 协议）</td>
+                                <td>7.5-12.5ms</td>
+                            </tr>
+                            <tr>
+                                <td>有线（USB 2.0 协议）</td>
+                                <td>&lt;1ms</td>
+                            </tr>
+                        </table>
+                        <p><strong>注：</strong>视频演示使用 USB 有线传输，显示硬件本身的最大刷新率为 60Hz。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>自校准</h3>
+                <div class="feature-content">
+                    <p>理论上，用户在购买后无需进行任何手动校准。掌控可以通过自适应算法在正常使用过程中进行自校准。</p>
+                    <p>该特性不同于大多数已知的穿戴式手部追踪设备，那些设备要求用户在每次使用前进行特定手势（例如握拳或张开手指），有时甚至需要在每次使用前进行。</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>捏合检测</h3>
+                <div class="feature-content">
+                    <p>基于专有硬件，该项技术能够在关键点（如两个指尖接触时）实现精确的单手捏合检测。基于此，它可以在毫米级精度下实现像按钮按下或滑动等功能的精确触发。</p>
+                    <p>相比需要手部保持在摄像头视野内并且捏合动作相对较大的基于视觉的解决方案，该解决方案显著提升了用户体验，减少了用户的疲劳感。</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>高稳定性</h3>
+                <div class="feature-content">
+                    <ul class="stability-comparison">
+                        <li><strong>与 9 轴 IMU 方案相比</strong> - 该方案不受 磁场 或 铁磁物质 的影响。</li>
+                        <li><strong>与 电磁 方案相比</strong> - 该方案不受环境中 金属物体 的干扰。</li>
+                        <li><strong>与 拉伸、弯曲传感器 方案相比</strong> - 该方案几乎避免了由 传感器老化 引起的 参数漂移。</li>
+                        <li><strong>与 计算机视觉 方案相比</strong> - 该方案显然不受 光线因素 或 视觉遮挡 等因素的影响。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>易穿戴</h3>
+                <div class="feature-content">
+                    <p>只需两步：戴上手套并将魔术贴固定在手腕。</p>
+                    <p>为适应不同的手部尺寸，提供几种标准的弹性手套尺码。手指的粗细不会影响适配性，手套旨在尽可能匹配不同的手指长度。</p>
+                </div>
+            </div>
+            
+            <div class="feature-item collapsed">
+                <h3>低成本</h3>
+                <div class="feature-content">
+                    <p>每双手套量产制造成本约<span class="price-spotlight">360元人民币</span>，远低于其他同类方案。</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>技术规格</h2>
+        <div class="tech-spec">
+            <div class="tech-spec-label">重量</div>
+            <div class="tech-spec-value">每只手套大约 100 克（不包括电池）</div>
+        </div>
+        <div class="tech-spec">
+            <div class="tech-spec-label">功耗</div>
+            <div class="tech-spec-value">每只手套大约 83mA @ 5.1V（还有显著提升空间）</div>
+        </div>
+    </div>
+
+    <div class="card collapsible-card collapsed">
+        <h2>量产成本估计</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <p style="text-align: left;"><strong>基于单只手套</strong></p>
+            <table>
+                <tr>
+                    <th><strong>类别</strong></th>
+                    <th><strong>价格 (单位: 元)</strong></th>
+                    <th><strong>备注</strong></th>
+                </tr>
+                <tr>
+                    <td>IMU 芯片</td>
+                    <td style="text-align: right;">53.5</td>
+                    <td>基于淘宝零售价格</td>
+                </tr>
+                <tr>
+                    <td>MCU, BLE 芯片</td>
+                    <td style="text-align: right;">16.5</td>
+                    <td>基于淘宝零售价格</td>
+                </tr>
+                <tr>
+                    <td>其他 IC 和电子元件</td>
+                    <td style="text-align: right;">33.0</td>
+                    <td>预估</td>
+                </tr>
+                <tr>
+                    <td>PCB, FPC</td>
+                    <td style="text-align: right;">14.5</td>
+                    <td>预估</td>
+                </tr>
+                <tr>
+                    <td>外壳和保护结构</td>
+                    <td style="text-align: right;">20.0</td>
+                    <td>预估</td>
+                </tr>
+                <tr>
+                    <td>专用布料手套</td>
+                    <td style="text-align: right;">30.0</td>
+                    <td>预估</td>
+                </tr>
+                <tr>
+                    <td>组装及其他</td>
+                    <td style="text-align: right;">12.5</td>
+                    <td>预估</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>总计</strong></td>
+                    <td style="text-align: right;"><strong>180.0</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2>规模成本估计</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>生产规模</strong></th>
+                    <th><strong>单位成本 (元/套)</strong></th>
+                </tr>
+                <tr>
+                    <td>10套以内</td>
+                    <td style="text-align: right;">5,000</td>
+                </tr>
+                <tr>
+                    <td>100套</td>
+                    <td style="text-align: right;">3,500</td>
+                </tr>
+                <tr>
+                    <td>1,000套</td>
+                    <td style="text-align: right;">2,000</td>
+                </tr>
+                <tr>
+                    <td>1万套</td>
+                    <td style="text-align: right;">1,000</td>
+                </tr>
+                <tr>
+                    <td>10万套</td>
+                    <td style="text-align: right;">500</td>
+                </tr>
+                <tr>
+                    <td>100万套</td>
+                    <td style="text-align: right;">360</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2 class="section-toggle collapsed">市场机会</h2>
+        <div class="feature-grid">
+            <div class="feature-item collapsed">
+                <h3>具身智能与机器人团队</h3>
+                <div class="feature-content">
+                    <p>需求：可规模化采集的真实人手多模态数据（含与灵巧手同源的触觉传感器数据，用于生成面向灵巧手训练的高质量多模态数据集）；细粒度关节追踪与可靠标注。</p>
+                    <p>购买方：企业/高校研究实验室、数据采集团队。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>具身降临（遥操作）</h3>
+                <div class="feature-content">
+                    <p>应用场景：危险环境作业（危重病房、电力）、搜救作业等。</p>
+                    <p>购买方：机器人公司、特种作业设备商。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>XR/VR 厂商</h3>
+                <div class="feature-content">
+                    <p>需求：高精度、低延迟、稳定交互；标准化 SDK 与硬件接口，便于集成至头显与内容生态。</p>
+                    <p>购买方：头显/控制器团队、系统集成伙伴、平台方 BD。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>VR大空间</h3>
+                <div class="feature-content">
+                    <p>需求：稳定可靠的手部交互与捏合识别；现场部署可靠、维护简便。</p>
+                    <p>购买方：VR主题乐园、沉浸式体验馆、线下文旅场馆。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>工业培训与仿真</h3>
+                <div class="feature-content">
+                    <p>需求：自然手部操作与姿态还原；高可靠性、易维护，适配主流仿真/引擎。</p>
+                    <p>购买方：仿真系统厂商、职业院校/培训机构。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>动画与特效制作</h3>
+                <div class="feature-content">
+                    <p>需求：细节级手指动作捕捉；与 DCC/实时引擎（如 Unreal/Unity）无缝对接。</p>
+                    <p>购买方：Mocap 工作室、影视/游戏内容公司。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>医疗康复与科研</h3>
+                <div class="feature-content">
+                    <p>需求：高分辨率手部运动数据；设备易佩戴、可消毒复用；研究级导出格式。</p>
+                    <p>购买方：康复设备商、医院/研究机构（科研用途）。</p>
+                </div>
+            </div>
+            <div class="feature-item collapsed">
+                <h3>教育与创客生态</h3>
+                <div class="feature-content">
+                    <p>需求：低成本、可编程、可课程化；配套示例与教学资源。</p>
+                    <p>购买方：高校/中学实验室、创客空间、研学机构。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="card collapsible-card collapsed">
+        <h2>发展历史</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>时间</strong></th>
+                    <th><strong>事件</strong></th>
+                </tr>
+                <tr>
+                    <td>2016.05</td>
+                    <td>启动<strong>掌控</strong>项目。</td>
+                </tr>
+                <tr>
+                    <td>2016.10</td>
+                    <td>开发了初始原型，使用了行业标准算法并优化了传感器布局，该版本性能超越了当时全球所有已知的IMU手套技术方案。</td>
+                </tr>
+                <tr>
+                    <td>2018.01</td>
+                    <td>完成了一次的硬件架构更新。</td>
+                </tr>
+                <tr>
+                    <td>2019.03</td>
+                    <td>完成了软件架构和算法的重要更新。</td>
+                </tr>
+                <tr>
+                    <td>2019.05</td>
+                    <td>完成了<a href="https://www.bilibili.com/video/BV1q4411g7Yi" target="_blank"><strong>2019-里程碑原型</strong></a>，该版本实现了超越当时全球所有已知手部追踪解决方案的运动捕捉性能。</td>
+                </tr>
+                <tr>
+                    <td>2019.08</td>
+                    <td>为解决IMU基础原理的局限性提出了突破性的改良方案，同时能够极大降低器件成本。</td>
+                </tr>
+                <tr>
+                    <td>2019.11</td>
+                    <td>为进一步发展<strong>掌控</strong>，成立了<strong>源域科技（杭州）有限公司</strong>。</td>
+                </tr>
+                <tr>
+                    <td>2020.01-2021.11</td>
+                    <td>继续完善硬件并进行了工业设计优化，完全重构了软件架构。</td>
+                </tr>
+                <tr>
+                    <td>2021.12</td>
+                    <td>深入理论算法研究，提出了解决不同人手部差异的初步方案。</td>
+                </tr>
+                <tr>
+                    <td>2022.01-2024.01</td>
+                    <td>致力于解决生产问题，探索降低传感器材料成本的方法，但初步的多轮尝试均以失败告终。</td>
+                </tr>
+                <tr>
+                    <td>2024.05</td>
+                    <td>经过之前大量研究，得到启发顿悟，更加深刻理解了IMU技术和算法理论，实现了算法和硬件的显著改进。</td>
+                </tr>
+                <tr>
+                    <td>2024.10</td>
+                    <td>完成了<a href="https://www.bilibili.com/video/BV1swSzYUE6Z" target="_blank"><strong>2024-里程碑原型</strong></a>，完美验证了数学理论和算法，这一突破真正消除了原有IMU方案的固有缺陷，并大幅降低了成本。</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>早期市场验证</h2>
+        <ul>
+            <li><strong>潜在客户：</strong>多个高校实验室、国内知名具身智能灵巧手公司、国内知名动作捕捉公司、科研团队和开发者已体验原型，明确表示购买意愿</li>
+            <li><strong>未销售原因：</strong>受限于完善国际专利保护和硬件/软件安全加密未完成</li>
+            <li><strong>下一步计划：</strong>专利和加密完成以及小批量生产测试后，可立即启动销售和B端客户早期小批量交付</li>
+        </ul>
+    </div>
+    
+
+    <div class="card">
+        <h2>未来发展阶段</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>阶段一：实验室切入 + 阶段二准备</h3>
+                <p><strong>目标：</strong>建立技术验证和学术影响力，同时为多模态数据采集做准备</p>
+                <p><strong>合作对象：</strong>灵巧手具身智能公司 + 计算机、自动化、机械、生医等学院实验室</p>
+                <p><strong>核心策略：</strong>提供试用与技术支持，面向课程和实验项目，沉淀示教数据；<span class="highlight">联系灵巧手具身智能公司了解需求意向，设计多模态采集方案</span></p>
+                <p><strong>商业模式：</strong>技术服务</p>
+                <p><strong>收入预估：</strong>年收入约 <span class="price-spotlight">200-400 万元人民币</span></p>
+                <p><strong>收入构成：</strong>PoC验证费（2-3家 × 10-15万）+ 试点项目（10-20套 × 8-12万）+ 技术服务费（5-8家 × 15-25万）</p>
+            </div>
+            <div class="feature-item">
+                <h3>阶段二：新一代多模态采集设备 + 手部数据服务平台</h3>
+                <p><strong>目标：</strong>成为具身智能和机器人领域的手部触觉数据服务标准</p>
+                <p><strong>核心产品：</strong><span class="highlight">定制化/标准化多模态数据采集手套</span> + <span class="highlight">手部触觉数据服务平台</span></p>
+                <p><strong>合作对象：</strong>灵巧手厂商、具身智能公司、特种作业机器人公司</p>
+                <p><strong>商业模式：</strong>硬件销售 + 数据采集服务 + 数据平台订阅 + 算法授权</p>
+                <p><strong>收入预估：</strong>年收入约 <span class="price-spotlight">2000-8000 万元人民币</span></p>
+            </div>
+            <div class="feature-item">
+                <h3>阶段三：消费级 VR 控制器 + 战略出售</h3>
+                <p><strong>目标：</strong>成为VR/AR生态的标准手势控制器，同时寻求公司整体战略出售</p>
+                <p><strong>产品形态：</strong>轻量化手套，高精度手势追踪与交互框架</p>
+                <p><strong>潜在买家：</strong>Meta、Apple、Google 等 VR/AR 平台巨头</p>
+                <p><strong>商业模式：</strong>硬件销售 + 软件授权 + 平台合作 + 战略出售</p>
+                <p><strong>收入预估：</strong>年收入约 <span class="price-spotlight">10 亿元人民币</span>，整体战略出售估值 <span class="price-spotlight">数亿至数十亿人民币</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>早期阶段规划</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>阶段</strong></th>
+                    <th><strong>时间</strong></th>
+                    <th><strong>关键里程碑/交付物</strong></th>
+                </tr>
+                <tr>
+                    <td>PoC 验证</td>
+                    <td>第 0–2 个月</td>
+                    <td>与国内高校/科研实验室完成 2–3 家 PoC（概念验证）；接口对齐与性能评估；不涉及合规认证，仅验证核心能力</td>
+                </tr>
+                <tr>
+                    <td>试点打样</td>
+                    <td>第 2–6 个月</td>
+                    <td>在国内实验室/行业场景完成 10–20 套试点；发布 SDK/示例；固化 SOP 与生产工艺；启动软硬件加密方案设计与测试</td>
+                </tr>
+                <tr>
+                    <td>知识产权与安全</td>
+                    <td>第 4–8 个月</td>
+                    <td>提交国内专利申请与 PCT 国际专利布局；完成软硬件加密模块的迭代，形成知识产权与数据安全保护</td>
+                </tr>
+                <tr>
+                    <td>首批交付</td>
+                    <td>第 6–10 个月</td>
+                    <td>完成首批量产与国内客户交付；建立售后与复购机制；为后续认证预留可追溯数据与变更记录</td>
+                </tr>
+                <tr>
+                    <td>合规与海外拓展</td>
+                    <td>第 10–16 个月</td>
+                    <td>启动并完成 3C/SRRC 及 CE/FCC/RoHS/REACH/SIG 认证；EU/US 小规模商业试点与本地化支持流程</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>团队</h2>
+        <div class="developer-profile">
+            <h3>李子琪</h3>
+            <p>源域科技（杭州）有限公司 创始人</p>
+            <ul>
+                <li>2014年毕业于重庆大学（CQU），获测量控制技术与仪器专业学士学位</li>
+                <li>在校期间总成绩排名第一</li>
+                <li>在人机交互（HCI）领域具有扎实的数学、物理和生物学基础</li>
+                <li>全栈工程师，在构建和优化交互系统方面具有深厚的技术专长</li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+    <div class="card">
+        <h2>融资需求</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>项目</strong></th>
+                    <th><strong>内容</strong></th>
+                </tr>
+                <tr>
+                    <td>拟融资金额</td>
+                    <td>350 万元人民币</td>
+                </tr>
+                <tr>
+                    <td>拟出让股权</td>
+                    <td>10%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card collapsible-card collapsed">
+        <h2>资金用途（2年）</h2>
+        <div class="collapsible-content">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th><strong>类别</strong></th>
+                    <th><strong>预计花费 (单位: 万元)</strong></th>
+                    <th><strong>备注</strong></th>
+                </tr>
+                <tr>
+                    <td>专利</td>
+                    <td style="text-align: right;">60</td>
+                    <td>PCT × 3 (中国、美国、欧洲、日本)</td>
+                </tr>
+                <tr>
+                    <td>加密设计</td>
+                    <td style="text-align: right;">15</td>
+                    <td>硬件/固件/算法安全</td>
+                </tr>
+                <tr>
+                    <td>场地</td>
+                    <td style="text-align: right;">10</td>
+                    <td>4 工位（含1个较大的硬件工位）× 2 年</td>
+                </tr>
+                <tr>
+                    <td>设备</td>
+                    <td style="text-align: right;">10</td>
+                    <td>实验/打样/测试设备</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" style="vertical-align: middle;">人员</td>
+                    <td style="text-align: right;">15</td>
+                    <td>市场、销售 1 人 × 1 年</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">80</td>
+                    <td>高级硬件工程师 1 人 × 2 年</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">45</td>
+                    <td>创始人 1 人 × 2 年</td>
+                </tr>
+                <tr>
+                    <td>差旅</td>
+                    <td style="text-align: right;">5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="vertical-align: middle;">完善设计</td>
+                    <td style="text-align: right;">10</td>
+                    <td>布料基底方案验证</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">10</td>
+                    <td>改善外观工艺用料</td>
+                </tr>
+                <tr>
+                    <td>批量测试</td>
+                    <td style="text-align: right;">10</td>
+                    <td>5 套 × 2 次 + 10 套 × 1 次</td>
+                </tr>
+                <tr>
+                    <td>最终生产</td>
+                    <td style="text-align: right;">35</td>
+                    <td>100 套</td>
+                </tr>
+                <tr>
+                    <td>合规与认证</td>
+                    <td style="text-align: right;">25</td>
+                    <td>3C/SRRC/CE/FCC/RoHS/REACH/SIG 认证预算</td>
+                </tr>
+
+                <tr>
+                    <td>展会/会议</td>
+                    <td style="text-align: right;">20</td>
+                    <td>海内外行业展</td>
+                </tr>
+                <tr>
+                    <td>推广</td>
+                    <td style="text-align: right;">50</td>
+                    <td>海内外品牌与渠道投放</td>
+                </tr>
+                <tr>
+                    <td>动态预留</td>
+                    <td style="text-align: right;">10</td>
+                    <td></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>总计</strong></td>
+                    <td style="text-align: right;"><strong>410</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer>
+    <div class="container">
+        <p class="company-name"><a href="https://www.matrixrealm.com" target="_blank" style="color: #ffffff; text-decoration: none;">源域科技（杭州）有限公司</a></p>
+        <div class="company-logo">
+            <svg xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns="http://www.w3.org/2000/svg"
+                 height="18"
+                 width="210"
+                 version="1.1"
+                 viewBox="0 0 210 18">
+                <path style="fill:#ffffff;stroke-width:0"
+                      d="M 0,0 V 18 H 3 V 5.4 l 4.5,7.2 h 3.75 L 15.6,5.4 V 18 h 3 V 0 H 14.85 L 9.3,9.6 3.75,0 Z m 28.2,0 -7.35,18 h 9.597657 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 L 30,4.5 35.55,18 H 39.3 L 31.95,0 Z m 9,0 v 3.6 h 7.35 V 18 H 48.3 V 3.6 h 7.35 V 2.85 C 55.65,1.2 54.75,0 53.55,0 Z M 57.9,0 V 3.6 H 70.5 V 7.2 H 57.9 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.2 h 0.14941 c 1.5,0 2.7,-1.5 2.7,-3.3 V 3.6 C 74.25,1.5 73.05,0 71.55,0 Z M 77.25,0 V 18 H 81 V 0 Z m 6.6,0 7.05,9 -7.05,9 h 4.5 l 4.8,-6.15 4.8,6.15 h 4.5 L 95.4,9 102.45,0 h -4.5 L 93.15,6.15 88.35,0 Z m 31.2,0 v 3.45 c 0,0 0,0.1523437 0.1494,0.1523436 h 12.45 V 7.2 H 115.05 V 18 h 3 v -7.2 h 6.75 l 3,7.2 h 3.75 l -3,-7.05 c 0,0 0,-0.15 0.1494,-0.15 h 0.15234 c 1.5,0 2.69824,-1.5 2.69824,-3.3 V 3.6 c -0.14999,-2.1 -1.35,-3.6 -3,-3.6 z m 18.6,0 V 3.6 H 150 V 2.85 C 150,1.2 148.95,0 147.75,0 Z m 25.95,0 -7.35,18 h 9.6 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 h -2.25 l 4.04942,-9.9 5.54883,13.5 h 3.75 L 163.35,0 Z m 13.34766,0 v 18 h 16.35 v -0.9 c 0,-1.35 -1.05,-2.7 -2.25,-2.7 h -10.35 V 0 Z m 18.6,0 v 18 h 3 V 5.4 l 4.35,7.2 h 3.75 l 4.5,-7.2 V 18 H 210 V 0 h -3.6 L 200.85,9.6 195.14942,0 Z M 133.64941,7.2 V 18 H 150 v -0.9 c 0,-1.5 -1.05,-2.7 -2.25,-2.7 H 137.4 V 10.8 H 150 V 9.75 c 0,-1.5 -1.05,-2.5517577 -2.25,-2.5517577 z" />
+            </svg>
+        </div>
+        <p>© 2019-2025 All Rights Reserved</p>
+    </div>
+</footer>
+
+<script>
+// Collapsible functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Card collapsible functionality
+    const collapsibleCards = document.querySelectorAll('.collapsible-card');
+    collapsibleCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('collapsed');
+        });
+    });
+    
+    // Feature items are controlled by section toggle only
+    const collapsibleFeatures = document.querySelectorAll('.feature-item');
+    
+    // Section toggle functionality (expand/collapse all features)
+    const sectionToggles = document.querySelectorAll('.section-toggle');
+    sectionToggles.forEach(sectionToggle => {
+        sectionToggle.addEventListener('click', function() {
+            const isCollapsed = this.classList.contains('collapsed');
+            
+            // Find the feature grid within the same card
+            const card = this.closest('.card');
+            const featureItems = card.querySelectorAll('.feature-item');
+            
+            // Toggle all feature items in this section
+            featureItems.forEach(feature => {
+                if (isCollapsed) {
+                    feature.classList.remove('collapsed');
+                } else {
+                    feature.classList.add('collapsed');
+                }
+            });
+            
+            // Toggle section toggle state
+            this.classList.toggle('collapsed');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
+
+
