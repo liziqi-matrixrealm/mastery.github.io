@@ -279,7 +279,7 @@ const englishContent = `
                 <div style="flex:1; min-width:260px;">
                     <ul>
                         <li>Graduated with a bachelor's degree in Measurement and Control Technology and Instruments from Chongqing University (CQU) in 2014</li>
-                        <li>Ranked 1st in overall academic performance</li>
+                        <li>Ranked 1st in overall academic performance in the major</li>
                         <li>Expert in Human-Computer Interaction (HCI) with strong foundation in mathematics, physics, and biology</li>
                         <li>Full-stack engineer with deep technical expertise in building and optimizing interactive systems</li>
                     </ul>
@@ -547,7 +547,7 @@ const chineseContent = `
 
                     <ul>
                         <li>2014年毕业于重庆大学（CQU），获测量控制技术与仪器专业学士学位</li>
-                        <li>在校期间总成绩排名第一</li>
+                        <li>在校期间，专业综合成绩排名第一</li>
                         <li>在人机交互（HCI）领域具有扎实的数学、物理和生物学基础</li>
                         <li>全栈工程师，在构建和优化交互系统方面具有深厚的技术专长</li>
                     </ul>
