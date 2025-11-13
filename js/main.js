@@ -42,7 +42,7 @@ const englishContent = `
                 allowfullscreen>
             </iframe>
             <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
-                <strong>Note:</strong> Display hardware limited to 60Hz refresh rate
+                <strong>Note:</strong> Display hardware in this video limited to 60Hz refresh rate
             </p>
         </div>
     </div>
@@ -57,11 +57,12 @@ const englishContent = `
         <div class="feature-grid">
             <div class="feature-item">
                 <h3>Embodied Intelligence</h3>
-                <p><strong>Mastery</strong> is the perfect device for collecting <span class="highlight">AI data for dexterous hands</span>, capable of generating <span class="highlight">high-quality multi-modal real hand interaction data</span> in bulk.</p>
+                <p>As a key component of <span class="highlight">dexterous hand teleoperation</span> systems.</p>
+                <p>It is also an ideal device for collecting <span class="highlight">high-quality multi-modal real hand interaction data</span>.</p>
             </div>
             <div class="feature-item">
                 <h3>Computer 3D Interaction</h3>
-                <p>Unlike traditional controllers with buttons and joysticks, Mastery leverages natural hand movements, opening a new era of interaction. Just as smartphones replaced physical buttons with touch screens, <strong>Mastery</strong> makes interaction more <span class="highlight">intuitive and precise</span>.</p>
+                <p>Unlike traditional controllers that rely on buttons and joysticks and require handheld operation, this system opens a new way of interaction by fully leveraging natural hand movements. Just as smartphones replaced physical buttons with multi-touch screens, it makes interaction more <span class="highlight">intuitive and precise</span>.</p>
             </div>
         </div>
     </div>
@@ -310,26 +311,27 @@ const chineseContent = `
                 mozallowfullscreen="true" >
             </iframe>
             <p style="max-width: 340px; margin-top: 10px; text-align: left; margin-left: auto; margin-right: auto;">
-                <strong>注：</strong>显示硬件最大刷新率为60Hz
+                <strong>注：</strong>视频中显示器最大刷新率为60Hz
             </p>
         </div>
     </div>
 
     <div class="card">
         <h2>概述</h2>
-        <p>由<span class="highlight">6轴IMU</span>与<span class="highlight">专有硬件和软件算法</span>驱动，<strong>掌控</strong>以<span class="highlight">高精度</span>捕捉人类手部的几乎所有<span class="highlight">细微动作</span>，同时保持<span class="highlight">低制造成本</span>。它使用户能够以最<span class="highlight">自然、轻松、舒适</span>的方式在3D环境中进行交互。</p>
+        <p>由<span class="highlight">6轴IMU</span>与<span class="highlight">专有硬件和软件算法</span>驱动，<strong>掌控</strong>以<span class="highlight">高精度</span>捕捉人类手部的几乎所有<span class="highlight">细微动作</span>，同时保持<span class="highlight">低制造成本</span>。它使用户能够以最<span class="highlight">自然、轻松、舒适</span>的方式在3D环境中进行交互</p>
 
-        <p><span class="highlight">手套形式</span>为<span class="highlight">触觉反馈系统</span>和<span class="highlight">触觉采集系统</span>提供了理想的载体（目前配备振动电机）。</p>
+        <p><span class="highlight">手套形式</span>为<span class="highlight">触觉反馈系统</span>和<span class="highlight">触觉采集系统</span>提供了理想的载体（目前配备振动电机）</p>
         
         <div class="section-title">市场应用</div>
         <div class="feature-grid">
             <div class="feature-item">
                 <h3>具身智能</h3>
-                <p><strong>掌控</strong>是<span class="highlight">为灵巧手提供AI数据</span>的完美采集装置，可用于批量生成<span class="highlight">高质量多模态的真实手部交互数据</span>。</p>
+                <p>作为<span class="highlight">灵巧手遥操作</span>系统的关键组成部分<span class="highlight"></p>
+                <p>同时是采集<span class="highlight">高质量多模态的真实手部交互数据</span>的理想装置</p>
             </div>
             <div class="feature-item">
                 <h3>计算机3D交互</h3>
-                <p>与传统控制器依赖按钮、操纵杆并需要手持不同，<strong>掌控</strong>通过完全利用手部的自然运动，正在开启交互的新纪元。就像智能手机用多点触控屏代替了物理按键，<strong>掌控</strong>使交互变得更加<span class="highlight">直观、精确</span>。</p>
+                <p>不同于依赖按钮和操纵杆、需要手持的传统控制器，这一系统通过充分利用手部的自然运动，开启了全新的交互方式。正如智能手机以多点触控取代物理按键，使交互更加<span class="highlight">直观、精确</span></p>
             </div>
         </div>
     </div>
@@ -544,7 +546,6 @@ const chineseContent = `
                     <div style="font-size:0.9em; opacity:0.9; margin-top:-2px;">WeChat</div>
                 </div>
                 <div style="flex:1; min-width:260px;">
-
                     <ul>
                         <li>2014年毕业于重庆大学（CQU），获测量控制技术与仪器专业学士学位</li>
                         <li>在校期间，专业综合成绩排名第一</li>
