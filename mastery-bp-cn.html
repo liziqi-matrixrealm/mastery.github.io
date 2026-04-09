@@ -146,6 +146,148 @@ a:hover {
     box-shadow: 0 4px 12px rgba(100, 200, 200, 0.2);
 }
 
+.quantum-metagloves-section-intro {
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.quantum-metagloves-section-intro h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1.05em;
+}
+
+.quantum-metagloves-section-intro p {
+    margin: 0;
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    line-height: 1.55;
+}
+
+.quantum-metagloves-gallery {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem 0.75rem;
+    justify-items: center;
+    align-items: start;
+}
+
+.quantum-metagloves-gallery figure {
+    margin: 0;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantum-metagloves-gallery img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+}
+
+.quantum-metagloves-gallery figcaption {
+    margin: 0.5rem 0 0;
+    width: 100%;
+    max-width: 420px;
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.quantum-metagloves-gallery img {
+    cursor: zoom-in;
+}
+
+.quantum-metagloves-video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-color);
+    background: #000;
+}
+
+.quantum-metagloves-video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.lightbox.is-open {
+    display: flex;
+}
+
+.lightbox-panel {
+    width: min(1100px, 96vw);
+    max-height: 92vh;
+    background: rgba(18, 18, 18, 0.92);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.65);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+}
+
+.lightbox-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 10px 0;
+}
+
+.lightbox-close {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox-body {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.lightbox-body img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 76vh;
+    border: 1px solid var(--border-color);
+}
+
+.lightbox-caption {
+    padding: 0 14px 12px;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.95em;
+}
+
 .video-container {
     text-align: center;
     margin: 15px 0;
@@ -788,7 +930,7 @@ tr.total-row td {
                     <p>在 TAM/SAM 的基础上，结合当前竞品收入与我们的技术/成本优势，可以做出较为保守的可获取规模预估：</p>
                     <ul>
                         <li>参考第三方商业数据库估算，动捕手套头部厂商<strong>Manus Meta（荷兰）</strong>当前年营收约 <strong>1200万美元</strong>。<span class="data-source"><a href="https://sales.superagi.com/company/manus%E2%84%A2" >Research by SuperAGI</a></span></li>
-                        <li>在 2–3 年内，伴随高自由度灵巧手AI数据训练平台作用提高，凭借我们技术与成本优势，单年收入有望提升至 <strong>3000–5000 万美元</strong>（约 <strong>2–3.5 亿元人民币</strong>）。</li>
+                        <li>在 2–3 年内，伴随高自由度灵巧手AI数据训练平台作用提高，凭借我们技术与成本优势，单年收入有望提升至 <span class="price-spotlight">3000–5000 万美元</span>（约 <strong>2–3.5 亿元人民币</strong>）。</li>
                     </ul>
                 </div>
             </div>
@@ -840,6 +982,61 @@ tr.total-row td {
                 </td>
             </tr>
             </table>
+        </div>
+
+        <div class="quantum-metagloves-section-intro">
+            <h3>Manus Meta 部分问题</h3>
+            <p>说明：截取自 Manus Meta 官网 <a href="https://www.manus-meta.com/products/quantum-metagloves" target="_blank" rel="noopener noreferrer">Quantum Metagloves</a> 产品宣传页。</p>
+        </div>
+
+        <div class="quantum-metagloves-gallery">
+            <figure>
+                <img src="assets/images/quantum-metagloves_1.png" alt="Quantum Metagloves reference 1" loading="lazy" decoding="async" />
+                <figcaption>食指无名指高度错误</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/images/quantum-metagloves_2.png" alt="Quantum Metagloves reference 2" loading="lazy" decoding="async" />
+                <figcaption>食指高度错误</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/images/quantum-metagloves_3.png" alt="Quantum Metagloves reference 3" loading="lazy" decoding="async" />
+                <figcaption>小拇指张开角度</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/images/quantum-metagloves_4.png" alt="Quantum Metagloves reference 4" loading="lazy" decoding="async" />
+                <figcaption>四指排布&末端指节弯曲错误</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/images/quantum-metagloves_5.png" alt="Quantum Metagloves reference 5" loading="lazy" decoding="async" />
+                <figcaption>小拇指弯曲错误</figcaption>
+            </figure>
+
+            <figure>
+                <div class="quantum-metagloves-video-frame">
+                    <iframe
+                        src="https://player.bilibili.com/player.html?bvid=BV1Yh411F7sL&autoplay=0"
+                        scrolling="no"
+                        frameborder="0"
+                        allowfullscreen="true"
+                        webkitallowfullscreen="true"
+                        mozallowfullscreen="true"
+                        title="Bilibili video"
+                    ></iframe>
+                </div>
+                <figcaption>受电磁影响</figcaption>
+            </figure>
+        </div>
+
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+            <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+                <div class="lightbox-header">
+                    <button class="lightbox-close" type="button" aria-label="Close">×</button>
+                </div>
+                <div class="lightbox-body">
+                    <img id="lightboxImage" alt="Preview" />
+                </div>
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
         </div>
     </div>
 
@@ -1367,6 +1564,58 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle section toggle state
             this.classList.toggle('collapsed');
         });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+
+    function openLightbox(imgEl) {
+        if (!lightbox || !lightboxImage) return;
+        lightboxImage.src = imgEl.currentSrc || imgEl.src;
+        lightboxImage.alt = imgEl.alt || 'Preview';
+        const figure = imgEl.closest('figure');
+        const captionEl = figure ? figure.querySelector('figcaption') : null;
+        lightboxCaption.textContent = captionEl ? captionEl.textContent : '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightbox || !lightboxImage) return;
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.removeAttribute('src');
+        document.body.style.overflow = '';
+    }
+
+    const galleryImgs = document.querySelectorAll('.quantum-metagloves-gallery img');
+    galleryImgs.forEach(img => {
+        img.addEventListener('click', function(e) {
+            openLightbox(e.currentTarget);
+        });
+        img.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') openLightbox(e.currentTarget);
+        });
+        img.setAttribute('tabindex', '0');
+    });
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+            closeLightbox();
+        }
     });
 });
 </script>
